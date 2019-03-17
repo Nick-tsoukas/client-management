@@ -1,0 +1,41 @@
+mat-form-field {
+    width:250px;
+}
+
+mat-card {
+    width: 500px;
+    height: 500px;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -9999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../images/recs-compressor.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom center ;
+}
+
+
+.full_parent_height {
+    height: 100%;
+}
+
+.add_margin_top {
+    position: relative;
+    top: 3em;
+}
+
+@media screen and (max-width: 600px) {
+    mat-card {
+      height: 100%;
+      width: 100%;
+    }
+
+  }
