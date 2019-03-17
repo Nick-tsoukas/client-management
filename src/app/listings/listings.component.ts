@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Listing } from './listing.model';
+
 
 @Component({
   selector: 'app-listings',
@@ -6,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listings.component.css']
 })
 export class ListingsComponent implements OnInit {
+  selectedRecipe: Listing;
 
   constructor() { }
 
