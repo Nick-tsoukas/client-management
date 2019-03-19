@@ -13,7 +13,7 @@ export class WelcomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(form: NgForm) {
-    console.log(form.value.email, form.value.password)
-  }
+  // onSubmit(form: NgForm) {
+  //   console.log(form.value.email, form.value.password)
+  // }
 }

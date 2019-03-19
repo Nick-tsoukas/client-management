@@ -1,9 +1,9 @@
-<section class="container">
-  <mat-card class="mat-elevation-z24">
-    <mat-card-header fxLayoutAlign="center center">
-      <mat-card-title class="add_margin_top">Login</mat-card-title>
-    </mat-card-header>
-    <form fxLayout="column" fxLayoutAlign="center center" class="full_parent_height" #f="ngForm" (ngSubmit)="onSubmit(f)">
+<section fxFlex fxLayoutAlign="center center" class="container">
+  <mat-card fxFlex.lt-md="100vw"  fxLayoutAlign="center center" class="mat-elevation-z24">
+    <form fxLayout="column" fxLayoutGap="2em" fxLayoutAlign="center center" class="full_parent_height" #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <mat-card-header style="text-align: center;" fxLayoutAlign="center">
+            <mat-card-title class="add_margin_top">Login</mat-card-title>
+          </mat-card-header>
       <mat-form-field>
         <input type="email" matInput placeholder="You Email" ngModel name="email" email required />
         <mat-icon matSuffix>person_outline</mat-icon>

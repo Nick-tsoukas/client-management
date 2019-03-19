@@ -7,6 +7,7 @@ import { ListingsComponent } from './listings/listings.component';
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
   { path: 'listings', component: ListingsComponent },
+  { path: 'signup', component: WelcomeComponent}
 ];
 
 @NgModule({

@@ -1,0 +1,18 @@
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover,
+a:active {
+    color: lightgray;
+}
+
+main {
+    height: 100%;
+}
+
+.nav_icon {
+    display: inline-block;
+    padding-left:2em;
+}

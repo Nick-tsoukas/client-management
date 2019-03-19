@@ -3,16 +3,31 @@ mat-form-field {
 }
 
 mat-card {
-    width: 500px;
-    height: 500px;
+    /* min-width: 500px; */
+    height: 450px;
+}
+mat-card {
+    display: flex;
+    flex-direction: row;
+    min-width: 500px;
+
+}
+
+mat-card-header {
+    /* padding-top: 9em; */
 }
 
 .container {
     height: 100%;
+}
+
+body > app-root > mat-sidenav-container > mat-sidenav-content > main > app-welcome {
+    height: 100%;
+}
+
+/* .container {
+    height: 100vh;
     width: 100%;
-    position: absolute;
-    top: 0;
-    z-index: -9999999;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,22 +35,40 @@ mat-card {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom center ;
-}
+} */
 
 
-.full_parent_height {
+/* .full_parent_height {
     height: 100%;
 }
 
 .add_margin_top {
     position: relative;
     top: 3em;
-}
+} */
+
 
 @media screen and (max-width: 600px) {
     mat-card {
+        /* background: red; */
       height: 100%;
-      width: 100%;
+      width: 300px;
+      /* width: 100%; */
+      /* width: 100vw; */
+      padding-top: 0;
+      margin-top: 0;
+      border-top: none;
+    }
+
+    /* section {
+        width: 100vw;
+    } */
+
+  }
+
+  @media screen and (max-width: 960px) {
+    mat-card {
+      height: 100%;
     }
 
   }
