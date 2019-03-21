@@ -1,3 +1,8 @@
+mat-toolbar {
+    position: absolute;
+    top: 0;
+    z-index: 99999;
+}
 mat-form-field {
     width:250px;
 }
@@ -14,11 +19,14 @@ mat-card {
 
 .container {
     height: 100%;
+    background-image: url('../../images/rotterdam_001.png');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 body > app-root > mat-sidenav-container > mat-sidenav-content > main > app-welcome {
     height: 100%;
-
 }
 
 /* .container {

@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { AuthService } from 'src/app/auth/auth.service';
 
 
 @Component({
@@ -8,9 +9,13 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @Output() sidenavToggle = new EventEmitter<void>();
-  constructor() { }
+  isAuth : boolean;
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
+    this.authService.authChange.subscribe(authStatus => {
+      console.log(authStatus)
+    });
   }
   onToggleSidenav(){
     

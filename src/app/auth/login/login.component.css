@@ -1,3 +1,8 @@
+mat-toolbar {
+    position: absolute;
+    top: 0;
+    z-index: 99999;
+}
 mat-form-field {
     width:250px;
 }
@@ -14,34 +19,23 @@ mat-card {
 
 .container {
     height: 100%;
+    background-image: url('../../images/rotterdam_001.png');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 body > app-root > mat-sidenav-container > mat-sidenav-content > main > app-welcome {
     height: 100%;
-
 }
 
-/* .container {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url('../images/recs-compressor.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: bottom center ;
-} */
-
-
-/* .full_parent_height {
+.login_container {
     height: 100%;
 }
 
-.add_margin_top {
-    position: relative;
-    top: 3em;
-} */
+.form_container {
+    height: 100%;
+}
 
 
 @media screen and (max-width: 600px) {

@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar class="mat-elevation-z12" color="primary">
   <div fxHide.gt-sm>
     <button (click)="onToggleSidenav()" mat-icon-button>
       <mat-icon aria-label="Menu">menu</mat-icon>
@@ -11,6 +11,7 @@
 
   <div class="navPadding" fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
     <a routerLink="/signup">Sign Up</a>
+    <a routerLink="/login">Login</a>
     <a routerLink="/listings">Listings</a>
   </div>
 </mat-toolbar>
