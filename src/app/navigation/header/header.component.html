@@ -10,8 +10,9 @@
   </div>
 
   <div class="navPadding" fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
-    <a routerLink="/signup">Sign Up</a>
-    <a routerLink="/login">Login</a>
-    <a routerLink="/listings">Listings</a>
+    <a *ngIf="!isAuth" routerLink="/signup">Sign Up</a>
+    <a *ngIf="!isAuth" routerLink="/login">Login</a>
+    <a *ngIf="isAuth" routerLink="/listings">Listings</a>
+    <a *ngIf="isAuth" routerLink="/login" (click)="onLogout()">Log Out</a>
   </div>
 </mat-toolbar>
