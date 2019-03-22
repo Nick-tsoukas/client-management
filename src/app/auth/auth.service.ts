@@ -52,6 +52,8 @@ export class AuthService {
 
     // returns true is user is logged in ... false otherwise 
     isAuth(){
-        return this.user != null;
+        // tempo auth logic removed for testng future routes ..
+        // return this.user != null;
+        return true;
     }
 }

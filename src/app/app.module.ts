@@ -17,6 +17,8 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AuthService } from './auth/auth.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ListingService } from './listings/listing.service';
+import { ChartComponent } from './chart/chart.component'
 
 
 
@@ -29,7 +31,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     SidenavListComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, ListingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

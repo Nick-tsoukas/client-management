@@ -55,9 +55,9 @@ main {
 }
 
 mat-toolbar {
-    position: absolute;
+    /* position: absolute;
     top: 0;
     z-index: 99999;
-    margin-top: 4rem;
+    margin-top: 4rem; */
 }
 
