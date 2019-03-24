@@ -7,7 +7,12 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
 import { AngularFireStorageModule } from '@angular/fire/storage';
+
+
+
 import { environment } from '../environments/environment';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ListingsComponent } from './listings/listings.component';
@@ -37,6 +42,7 @@ import { ChartComponent } from './chart/chart.component'
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
     AngularFireStorageModule,
     AppRoutingModule,
     BrowserAnimationsModule,
