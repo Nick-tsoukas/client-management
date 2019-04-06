@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   @Output() sidenavToggle = new EventEmitter<void>();
   isAuth : boolean;
   authSubscription: Subscription;
+  myImage: string = "./im.png"
 
   constructor(private authService: AuthService) { }
 

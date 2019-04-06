@@ -1,3 +1,23 @@
+<h1>hello</h1>
+<div *ngFor="let task of taskList | async" >
+ {{ task | json }} {{ task.id }}
+</div>
+
+<div *ngFor="let single of oneListing | async" >
+    {{ single | json }}
+   </div>
+
+
+
+
+
+
+
+
+
+
+
+
 <div *ngIf="detailHidden"  fxLayout="row wrap" ngStyle.gt-sm='padding-left: 4em; padding-right: 4em; justify-content: space-between;'>
       <mat-card fxFlex="400px" fxFlex.lt-sm="100%" *ngFor="let listing of listings | async"  class="example-card">
         <mat-card-title>{{ listing.streetAddress }}</mat-card-title>
@@ -10,11 +30,10 @@
         </mat-card-content>
         <mat-card-actions>
           <button mat-button>LIKE</button>
-          <button  (click)="myClick()" mat-button>Read More</button>
+          <button  (click)="listeningService.myClick()" mat-button>Read More</button>
         </mat-card-actions>
       </mat-card>
 
-</div>
 
 <div *ngIf="!detailHidden">
   <h1>I should be hidden</h1>
