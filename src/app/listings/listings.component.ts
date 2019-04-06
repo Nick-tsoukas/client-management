@@ -5,15 +5,12 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { Observable, noop, pipe } from 'rxjs';
 import { map, filter, subscribeOn } from 'rxjs/operators';
 
-
 @Component({
   selector: 'app-listings',
   templateUrl: './listings.component.html',
   styleUrls: ['./listings.component.scss'],
   providers: [AngularFirestore]
 })
-
-
 
 export class ListingsComponent implements OnInit {
   @Input() detailHidden: boolean = true;
@@ -30,6 +27,8 @@ export class ListingsComponent implements OnInit {
   constructor(private listeningService: ListingService, private db: AngularFirestore) {
     // Get All Listings  from the listening service and store in listing member ... 
     this.listings = this.listeningService.getAvailableListings();
+    // ============================================================
+    // This is the single listing data ..... 
     this.testDoc = this.db.doc('availableListings/D16VnZm2UAkUTDEXomEL');
     this.testDocData = this.testDoc.valueChanges();
 
