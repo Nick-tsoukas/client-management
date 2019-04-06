@@ -4,23 +4,6 @@ import { ListingService } from './listing.service';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable, noop, pipe } from 'rxjs';
 import { map, filter, subscribeOn } from 'rxjs/operators';
-import { isType } from '@angular/core/src/type';
-import { mapChildrenIntoArray } from '@angular/router/src/url_tree';
-import * as firebase from 'firebase';
-// important !!!!!!!!
-// ============= cant use ref where to query by id by you can query any other property 
-export interface Task {
-  description: string,
-  id?: string
-}
-
-export interface List {
-  id: string,
-  streetAddress: string,
-  cityZip: string,
-  image: string,
-  price: number
-}
 
 
 @Component({
@@ -36,50 +19,32 @@ export class ListingsComponent implements OnInit {
   @Input() detailHidden: boolean = true;
   @Input() myId: string;
   listings: Observable<Listing[]>;
-  //  task collection is the reference to the the database 
-  //  TaskList is reference to the data as an Observable 
-  taskCollection: AngularFirestoreCollection<Task>;
-  taskList: Observable<Task[]>
+  // ==========================================
   singleCollection: AngularFirestoreCollection<Listing>;
-  testDoc : AngularFirestoreDocument<Listing>;
   oneListing: Observable<Listing[]>;
-
-
+  // ===========================================
+  testDoc : AngularFirestoreDocument<Listing>;
+  testDocData: Observable<Listing>;
+  // ======================================
 
   constructor(private listeningService: ListingService, private db: AngularFirestore) {
-    this.taskCollection = this.db.collection('task', ref => {
-      return ref.where('description', '==', 'hello');
-    })
-    this.taskList = this.taskCollection.valueChanges();
-
-
+    // Get All Listings  from the listening service and store in listing member ... 
     this.listings = this.listeningService.getAvailableListings();
+    this.testDoc = this.db.doc('availableListings/D16VnZm2UAkUTDEXomEL');
+    this.testDocData = this.testDoc.valueChanges();
+
+     // Below is a test call using ref where .... end goal is to route to one listing page for more details on click read more .... 
+    // ======================================================================
     this.singleCollection = this.db.collection('availableListings', ref => {
       return ref.where('cityZip', '==', '80838');
     })
     this.oneListing = this.singleCollection.valueChanges();
-
-
-    //  lets try and get one document ..... 
-
-
-
-
-
-
-   
-
+    // =======================================================================================
 
   }
+
   ngOnInit() {
-
-
-
-
-
 
   }
 
 }
-
-// 4eLwoSF673eA5mNwWGom 

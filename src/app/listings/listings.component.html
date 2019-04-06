@@ -1,11 +1,16 @@
 <h1>hello</h1>
-<div *ngFor="let task of taskList | async" >
+<!-- <div *ngFor="let task of taskList | async" >
  {{ task | json }} {{ task.id }}
 </div>
 
 <div *ngFor="let single of oneListing | async" >
     {{ single | json }}
-   </div>
+   </div> -->
+
+  <div>
+      {{ (testDocData | async)?.cityZip }}
+
+  </div>
 
 
 
