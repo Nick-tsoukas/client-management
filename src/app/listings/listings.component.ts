@@ -32,14 +32,6 @@ export class ListingsComponent implements OnInit {
     this.testDoc = this.db.doc('availableListings/D16VnZm2UAkUTDEXomEL');
     this.testDocData = this.testDoc.valueChanges();
 
-     // Below is a test call using ref where .... end goal is to route to one listing page for more details on click read more .... 
-    // ======================================================================
-    this.singleCollection = this.db.collection('availableListings', ref => {
-      return ref.where('cityZip', '==', '80838');
-    })
-    this.oneListing = this.singleCollection.valueChanges();
-    // =======================================================================================
-
   }
 
   ngOnInit() {

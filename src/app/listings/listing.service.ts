@@ -6,21 +6,16 @@ import { Observable, pipe } from 'rxjs';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { ListingsComponent } from './listings.component';
 
-
-// how can I get one listing only 
-// how can i convert the observable to an array ...... HOW !_!_!+!+!+!+!+!+!
-
 @Injectable()
 export class ListingService implements OnInit {
-    clickListing: Observable<Listing>;
-    listings: Observable<Listing[]>;
-   list: Listing;;
   
-    constructor( private db: AngularFirestore) {
-      this.listings = this.db.collection('availableListings').snapshotChanges()
+  listings: Observable<Listing[]>;
+
+  constructor(private db: AngularFirestore) {
+    this.listings = this.db.collection('availableListings').snapshotChanges()
       .pipe(
         map(snaps => {
-         return snaps.map(snap => {
+          return snaps.map(snap => {
             return <Listing>{
               id: snap.payload.doc.id,
               ...snap.payload.doc.data()
@@ -28,19 +23,19 @@ export class ListingService implements OnInit {
           })
         })
       )
-     }
-  
-    ngOnInit() {
-      
-     }
+  }
 
-    getAvailableListings() {
-        return this.listings
-    }
+  ngOnInit() {
 
-    myClick(){
-    
-   
+  }
+
+  getAvailableListings() {
+    return this.listings
+  }
+
+  myClick() {
+
+
   }
 }
 

@@ -23,7 +23,8 @@ import { LoginComponent } from './auth/login/login.component';
 import { AuthService } from './auth/auth.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ListingService } from './listings/listing.service';
-import { ChartComponent } from './chart/chart.component'
+import { ChartComponent } from './chart/chart.component';
+import { DetailComponent } from './detail/detail.component'
 
 
 
@@ -37,7 +38,8 @@ import { ChartComponent } from './chart/chart.component'
     SidenavListComponent,
     SignupComponent,
     LoginComponent,
-    ChartComponent
+    ChartComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,

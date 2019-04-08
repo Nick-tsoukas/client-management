@@ -7,20 +7,20 @@
     {{ single | json }}
    </div> -->
 
-  <div>
-      {{ (testDocData | async)?.cityZip }}
+  <!-- <div style="max-height: 300px; max-width: 300px">
+        <mat-card >
+          <mat-card-title>  {{ (testDocData | async)?.streetAddress }}</mat-card-title>
+          <mat-card-subtitle>  {{ (testDocData | async)?.cityZip }}</mat-card-subtitle>
+          <img style="max-height: 333px" mat-card-image src='{{ (testDocData | async)?.image }}' alt="">
+          <mat-card-content>
 
-  </div>
-
-
-
-
-
-
-
-
-
-
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button  (click)="listeningService.myClick()" mat-button>Read More</button>
+          </mat-card-actions>
+        </mat-card>
+    </div> -->
 
 
 <div *ngIf="detailHidden"  fxLayout="row wrap" ngStyle.gt-sm='padding-left: 4em; padding-right: 4em; justify-content: space-between;'>
@@ -38,6 +38,7 @@
           <button  (click)="listeningService.myClick()" mat-button>Read More</button>
         </mat-card-actions>
       </mat-card>
+  </div>
 
 
 <div *ngIf="!detailHidden">
