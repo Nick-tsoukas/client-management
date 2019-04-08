@@ -1,3 +1,26 @@
+#Notes about working with firestore and the rxjs lib 
+
+It is important to note that you are working with an Observable so ...
+In order to get the data that you need you must subscribe to the observable and then get data >> assign 
+create a temp variable 'const data '  in the the subscribe and then assign it the the member to the component
+```javascript
+ this.testDoc = this.db.doc('availableListings/D16VnZm2UAkUTDEXomEL');
+    this.testDocData = this.testDoc.valueChanges();
+    this.testDocData.subscribe(val => {
+      const data =  {
+        id: 'string',
+        streetAddress: 'string',
+        cityZip: 'string',
+        image: 'string',
+        price: 34343434
+      }
+      this.oneListing = data;
+    })
+     
+
+  }
+```
+
 # ClientManagement
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1.

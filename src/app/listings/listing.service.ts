@@ -1,6 +1,5 @@
 import { Listing } from './listing.model';
 import { Injectable, OnInit } from '@angular/core';
-
 import { map, filter } from 'rxjs/operators';
 import { Observable, pipe } from 'rxjs';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
@@ -10,6 +9,8 @@ import { ListingsComponent } from './listings.component';
 export class ListingService implements OnInit {
   
   listings: Observable<Listing[]>;
+  testDoc : AngularFirestoreDocument<Listing>;
+  testDocData: Observable<Listing>;
 
   constructor(private db: AngularFirestore) {
     this.listings = this.db.collection('availableListings').snapshotChanges()
@@ -33,10 +34,11 @@ export class ListingService implements OnInit {
     return this.listings
   }
 
-  myClick() {
-
-
-  }
+  // myClick(id: string) {
+  //   this.testDoc = this.db.doc(`availableListings/${id}`);
+  //   this.testDocData = this.testDoc.valueChanges();
+  //   return this.testDocData;
+  // }
 }
 
 

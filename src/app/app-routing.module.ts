@@ -5,7 +5,7 @@ import { ListingsComponent } from './listings/listings.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AuthGuard } from './auth/auth.guard';
-import { DetailComponent } from './detail/detail.component';
+import { DetailComponent } from './listings/detail/detail.component';
 
 
 const routes: Routes = [

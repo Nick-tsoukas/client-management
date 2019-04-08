@@ -24,7 +24,7 @@ import { AuthService } from './auth/auth.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ListingService } from './listings/listing.service';
 import { ChartComponent } from './chart/chart.component';
-import { DetailComponent } from './detail/detail.component'
+import { DetailComponent } from './listings/detail/detail.component';
 
 
 
@@ -39,7 +39,7 @@ import { DetailComponent } from './detail/detail.component'
     SignupComponent,
     LoginComponent,
     ChartComponent,
-    DetailComponent
+    DetailComponent,
   ],
   imports: [
     BrowserModule,
