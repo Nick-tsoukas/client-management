@@ -25,6 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ListingService } from './listings/listing.service';
 import { ChartComponent } from './chart/chart.component';
 import { DetailComponent } from './listings/detail/detail.component';
+import { ListComponent } from './list/list.component';
 
 
 
@@ -40,6 +41,7 @@ import { DetailComponent } from './listings/detail/detail.component';
     LoginComponent,
     ChartComponent,
     DetailComponent,
+    ListComponent,
   ],
   imports: [
     BrowserModule,
