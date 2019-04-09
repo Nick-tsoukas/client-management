@@ -17,26 +17,18 @@ export class ListingsComponent implements OnInit {
   @Input() detailHidden: boolean = true;
   @Input() myId: string;
   listings: Observable<Listing[]>;
-  // ==========================================
-  singleCollection: AngularFirestoreCollection<Listing>;
-  @Input() oneListing: Listing;
-  // ===========================================
-  testDoc : AngularFirestoreDocument<Listing>;
   testDocData: Observable<Listing>;
-  // ======================================
 
   constructor(private listeningService: ListingService, private db: AngularFirestore,  private router: Router    ) {
     // Get All Listings  from the listening service and store in listing member ... 
     this.listings = this.listeningService.getAll();
-    // ============================================================
-    // this.testDocData = this.listeningService.getOne();
-
   }
 
   ngOnInit() {
     
   }
 
+  // Calls getOne method from the listenings service to build one listings
   myClick(id: string) {
    this.testDocData = this.listeningService.getOne(id)
    console.log(this.testDocData);
@@ -44,23 +36,4 @@ export class ListingsComponent implements OnInit {
   }
 
 }
-
-
-
-
- // This is the single listing data ..... 
-    // Lets wrap this in a function and then pass data to the detail comp on click event ... 
-    // this.testDoc = this.db.doc('availableListings/D16VnZm2UAkUTDEXomEL');
-    // this.testDocData = this.testDoc.valueChanges();
-    
-    // this.testDocData.subscribe(val => {
-    //   const data =  {
-    //     id: val.id,
-    //     streetAddress: val.streetAddress,
-    //     cityZip: val.cityZip,
-    //     image: val.image,
-    //     price: val.price
-    //   }
-    //   this.oneListing = data;
-    // })
      

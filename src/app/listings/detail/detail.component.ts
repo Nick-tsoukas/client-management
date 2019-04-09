@@ -12,6 +12,7 @@ import { map, filter, subscribeOn } from 'rxjs/operators';
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
+  // Somewhere is this code we should receive data from a click event that emits listing ...
   list : Listing;
 
   constructor(private listeningService: ListingService, private db: AngularFirestore,  private router: Router    ) {
