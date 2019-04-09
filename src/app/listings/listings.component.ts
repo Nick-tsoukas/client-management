@@ -14,10 +14,9 @@ import { map, filter, subscribeOn } from 'rxjs/operators';
 })
 
 export class ListingsComponent implements OnInit {
-  @Input() detailHidden: boolean = true;
   @Input() myId: string;
   listings: Observable<Listing[]>;
-  testDocData: Observable<Listing>;
+  list: Observable<Listing>;
 
   constructor(private listeningService: ListingService, private db: AngularFirestore,  private router: Router    ) {
     // Get All Listings  from the listening service and store in listing member ... 
@@ -27,12 +26,10 @@ export class ListingsComponent implements OnInit {
   ngOnInit() {
     
   }
-
   // Calls getOne method from the listenings service to build one listings
+  // =============== will not use this method for app .... will use list resolver 
   myClick(id: string) {
-   this.testDocData = this.listeningService.getOne(id)
-   console.log(this.testDocData);
-   this.detailHidden = false ;
+   this.list = this.listeningService.getOne(id)
   }
 
 }

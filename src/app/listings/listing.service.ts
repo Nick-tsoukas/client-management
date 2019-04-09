@@ -7,23 +7,9 @@ import { ListingsComponent } from './listings.component';
 
 @Injectable()
 export class ListingService implements OnInit {
-  oneListing: Listing;
-  listings: Observable<Listing[]>;
-  testDoc : AngularFirestoreDocument<Listing>;
-  testDocData: Observable<Listing>;
 
   constructor(private db: AngularFirestore) {
-    // this.listings = this.db.collection('availableListings').snapshotChanges()
-    //   .pipe(
-    //     map(snaps => {
-    //       return snaps.map(snap => {
-    //         return <Listing>{
-    //           id: snap.payload.doc.id,
-    //           ...snap.payload.doc.data()
-    //         }
-    //       })
-    //     })
-    //   );
+
   }
 
   ngOnInit() {
@@ -55,28 +41,7 @@ export class ListingService implements OnInit {
           })
         })
       )
-
   }
-  // getAvailableListings() {
-  //   return this.listings
-  // }
-
-  // getOneList(){
-  //   this.testDoc = this.db.doc('availableListings/D16VnZm2UAkUTDEXomEL');
-  //   this.testDocData = this.testDoc.valueChanges();
-  //   this.testDocData.subscribe(val => {
-  //     this.oneListing =  {
-  //       id: val.id,
-  //       streetAddress: val.streetAddress,
-  //       cityZip: val.cityZip,
-  //       image: val.image,
-  //       price: val.price
-  //     }
-  //    return this.oneListing;
-  //   });
-
-  
-  // }
 
 }
 
