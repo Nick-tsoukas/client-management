@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'detail', component: DetailComponent},
   {
-    path: 'listings/:listUrl',
+    path: 'listings/:listId',
     component: ListComponent,
     resolve: {
         list: ListResolver

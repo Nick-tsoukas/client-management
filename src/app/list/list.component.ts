@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+
+import { Listing } from '../listings/listing.model';
+import { ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  list : Listing;
+
+  constructor(
+    private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
+
+    this.list = this.route.snapshot.data['list'];
+    console.log(this.list)
+
+
+
   }
+
 
 }

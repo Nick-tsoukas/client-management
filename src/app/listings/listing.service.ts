@@ -1,6 +1,6 @@
 import { Listing } from './listing.model';
 import { Injectable, OnInit } from '@angular/core';
-import { map, filter } from 'rxjs/operators';
+import { map, filter, first } from 'rxjs/operators';
 import { Observable, pipe } from 'rxjs';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { ListingsComponent } from './listings.component';
@@ -25,7 +25,8 @@ export class ListingService implements OnInit {
           id: snap.payload.id,
           ...snap.payload.data()
         }
-      })
+      }),
+      first()
     )
   }
   
