@@ -1,3 +1,15 @@
+#Next step 
+
+One click of read more button ... 
+1. Built single listing member
+2. Must pass data to detail component 
+3. Detail component must have own url 
+4. Route to the detail component on click 
+5. Back button will take user to listings component 
+6. Also must have more data about listing on the detail component page .... 
+7. Use Angluar resolve ???? 
+8. Will Learn More
+
 #Notes about working with firestore and the rxjs lib 
 
 It is important to note that you are working with an Observable so ...
