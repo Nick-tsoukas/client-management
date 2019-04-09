@@ -1,28 +1,4 @@
-
 <app-detail></app-detail>
-<!-- <div *ngFor="let task of taskList | async" >
- {{ task | json }} {{ task.id }}
-</div>
-
-<div *ngFor="let single of oneListing | async" >
-    {{ single | json }}
-   </div> -->
-
-  <!-- <div style="max-height: 300px; max-width: 300px">
-        <mat-card >
-          <mat-card-title>  {{ (testDocData | async)?.streetAddress }}</mat-card-title>
-          <mat-card-subtitle>  {{ (testDocData | async)?.cityZip }}</mat-card-subtitle>
-          <img style="max-height: 333px" mat-card-image src='{{ (testDocData | async)?.image }}' alt="">
-          <mat-card-content>
-
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button>LIKE</button>
-            <button  (click)="listeningService.myClick()" mat-button>Read More</button>
-          </mat-card-actions>
-        </mat-card>
-    </div> -->
-
 <div *ngIf="detailHidden"  fxLayout="row wrap" ngStyle.gt-sm='padding-left: 4em; padding-right: 4em; justify-content: space-between;'>
       <mat-card fxFlex="400px" fxFlex.lt-sm="100%" *ngFor="let listing of listings | async"  class="example-card">
         <mat-card-title>{{ listing.streetAddress }}</mat-card-title>
@@ -35,14 +11,14 @@
         </mat-card-content>
         <mat-card-actions>
           <button mat-button>LIKE</button>
-          <button  (click)="myClick()" mat-button>Read More</button>
+          <button  (click)="myClick(listing.id)" mat-button>Read More</button>
         </mat-card-actions>
       </mat-card>
   </div>
 
 
 <div *ngIf="!detailHidden">
-  <h1>I should be hidden</h1>
-  <h1>I also should be hidden</h1>
-  <h1>This should be hidden as well</h1>
+  <h1> {{ (testDocData | async)?.streetAddress }}</h1>
+  <h1> {{ (testDocData | async)?.cityZip }}</h1>
+  <h1> {{ (testDocData | async)?.price }}</h1>
 </div>
