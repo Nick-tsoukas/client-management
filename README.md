@@ -10,11 +10,18 @@ One click of read more button ...
 7. Use Angluar resolve ???? 
 8. Will Learn More
 
+
+### Using a angluar router to pass data to list component
+1. The listResolver will pass data to the list component before it is rendered improving User exp 
+2. ListResolver is just a service
+
 #Notes about working with firestore and the rxjs lib 
 
 It is important to note that you are working with an Observable so ...
 In order to get the data that you need you must subscribe to the observable and then get data >> assign 
 create a temp variable 'const data '  in the the subscribe and then assign it the the member to the component
+
+will not use this code in app ... 
 ```javascript
  this.testDoc = this.db.doc('availableListings/D16VnZm2UAkUTDEXomEL');
     this.testDocData = this.testDoc.valueChanges();

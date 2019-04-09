@@ -10,7 +10,8 @@
     </mat-card-content>
     <mat-card-actions>
       <button mat-button>LIKE</button>
-      <button [routerLink]="['/listings', listing.streetAddress]"  mat-button>Read More</button>
+      <!-- router link on button -->
+      <button [routerLink]="['/listings', listing.id]"  mat-button>Read More</button>
     </mat-card-actions>
   </mat-card>
 </div>
