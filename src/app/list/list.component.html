@@ -1,3 +1,6 @@
-<h1>
-  {{list | json }}
-</h1>
+<h1>{{  list.cityZip}}</h1>
+<h4> {{ list.streetAddress }}</h4>
+<h4> {{ list.price | currency }}</h4>
+<div style="max-width: 500px;">
+  <img style="max-height: 500px; max-width: 500px"src="{{list.image}}" alt="">
+</div>
