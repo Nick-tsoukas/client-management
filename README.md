@@ -1,4 +1,25 @@
-#Next step 
+#Next step 2 
+- Build attractive card for displaying the list component data 
+- Start creating CRUD methods for admin  ... data manipulation 
+- Start learning reactive and template forms in Angular .... 
+- Clean up data on listing cards and add more info 
+
+#Next step 2 optional
+Think about using this code below in this app and other apps 
+- this function can be used as a utility function to convert the snapshots for you 
+- Good practice so not to repeat your self 
+
+```javascript
+export function convertSnaps<T>(snaps) {
+        return <T[]> snaps.map(snap => {
+            return {
+                id: snap.payload.doc.id,
+                ...snap.payload.doc.data()
+            };
+        });
+    }
+```
+#Next step 1
 
 One click of read more button ... 
 1. Built single listing member
@@ -9,6 +30,8 @@ One click of read more button ...
 6. Also must have more data about listing on the detail component page .... 
 7. Use Angluar resolve ???? 
 8. Will Learn More
+
+#Finished step 1 using angluar router >>> see below 
 
 
 ### Using a angluar router to pass data to list component
