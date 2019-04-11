@@ -1,22 +1,24 @@
 <section fxFlex fxLayoutAlign="center center" class="container">
-  <mat-card fxFlex.lt-md="100vw"  fxLayoutAlign="center center" class="mat-elevation-z24">
-    <form fxLayout="column" fxLayoutGap="2em" fxLayoutAlign="center center" class="full_parent_height" #f="ngForm" (ngSubmit)="onSubmit(f)">
-        <mat-card-header style="text-align: center;" fxLayoutAlign="center">
-            <mat-card-title class="add_margin_top">Login</mat-card-title>
-          </mat-card-header>
+  <mat-card fxFlex.lt-md="100vw" fxLayoutAlign="center center" class="mat-elevation-z24">
+    <form fxLayout="column" fxLayoutGap="2em" fxLayoutAlign="center center" class="full_parent_height" #f="ngForm"
+      (ngSubmit)="onSubmit(f)">
+      <mat-card-header style="text-align: center;" fxLayoutAlign="center">
+        <mat-card-title class="add_margin_top">Login</mat-card-title>
+      </mat-card-header>
       <mat-form-field>
         <input type="email" matInput placeholder="You Email" ngModel name="email" email required />
         <mat-icon matSuffix>person_outline</mat-icon>
         <mat-error>Email Is Invalid</mat-error>
       </mat-form-field>
       <mat-form-field>
-        <input hintLabel="Password Must Be At Least 6 Characters Long" type="password" matInput placeholder="Enter Password"
-          ngModel name="password" minlength="6" required #pwInput="ngModel" />
+        <input hintLabel="Password Must Be At Least 6 Characters Long" type="password" matInput
+          placeholder="Enter Password" ngModel name="password" minlength="6" required #pwInput="ngModel" />
         <mat-hint align="end"> {{pwInput.value?.length}} / 6 </mat-hint>
         <mat-icon matSuffix>lock</mat-icon>
         <mat-error>Password is not at least 6 characters long</mat-error>
       </mat-form-field>
-      <button class="mat-elevation-z12" style="margin-top:2em; width:250px;" type="submit" mat-raised-button color="primary">SignIn</button>
+      <button class="mat-elevation-z12" style="margin-top:2em; width:250px;" type="submit" mat-raised-button
+        color="primary">SignIn</button>
     </form>
   </mat-card>
 </section>

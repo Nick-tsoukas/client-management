@@ -2,7 +2,6 @@ import { Component, OnInit, EventEmitter, Output, OnDestroy } from '@angular/cor
 import { AuthService } from 'src/app/auth/auth.service';
 import { Subscription } from 'rxjs';
 
-
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -13,8 +12,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   @Output() sidenavToggle = new EventEmitter<void>();
   isAuth : boolean;
   authSubscription: Subscription;
-  myImage: string = "./im.png"
-
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
@@ -23,14 +20,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
     });
   }
   onToggleSidenav(){
-    
     this.sidenavToggle.emit();
   }
-
   onLogout(){
     this.authService.logOut();
   }
-
   ngOnDestroy(){
     this.authSubscription.unsubscribe();
   }

@@ -1,63 +1,41 @@
 mat-form-field {
-    width:250px;
+  width: 250px;
 }
 
 mat-card {
-    height: 450px;
+  height: 450px;
 }
+
 mat-card {
-    display: flex;
-    flex-direction: row;
-    min-width: 500px;
+  display: flex;
+  flex-direction: row;
+  min-width: 500px;
 
 }
 
 .container {
-    height: 100%;
+  height: 100%;
 }
 
-body > app-root > mat-sidenav-container > mat-sidenav-content > main > app-welcome {
-    height: 100%;
+body>app-root>mat-sidenav-container>mat-sidenav-content>main>app-welcome {
+  height: 100%;
 
 }
-
-/* .container {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url('../images/recs-compressor.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: bottom center ;
-} */
-
-
-/* .full_parent_height {
-    height: 100%;
-}
-
-.add_margin_top {
-    position: relative;
-    top: 3em;
-} */
-
 
 @media screen and (max-width: 600px) {
-    mat-card {
-        /* background: red; */
-      height: 100%;
-      width: 300px;
-      padding-top: 0;
-      margin-top: 0;
-      border-top: none;
-    }
+  mat-card {
+    /* background: red; */
+    height: 100%;
+    width: 300px;
+    padding-top: 0;
+    margin-top: 0;
+    border-top: none;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  mat-card {
+    height: 100%;
   }
 
-  @media screen and (max-width: 960px) {
-    mat-card {
-      height: 100%;
-    }
-
-  }
+}
