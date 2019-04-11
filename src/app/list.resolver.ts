@@ -14,9 +14,8 @@ export class ListResolver implements Resolve<Listing> {
     }
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Listing> {
-        // listId corsponds to the var in the app ROUTER
+        // listId corsponds to the member in the app ROUTER
         const listId = route.paramMap.get('listId');
-
         return this.listingService.getOne(listId);
     }
 

@@ -5,14 +5,14 @@
     <mat-card-subtitle>{{ listing.cityZip }}</mat-card-subtitle>
     <img style="max-height: 333px" mat-card-image src='{{listing.image}}' alt="">
     <mat-card-content>
-      <p data-id="{{listing.id}}">
-       {{listing.id}}
+      <p>
+       {{listing.price | currency}}
       </p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>LIKE</button>
+      <button mat-raised-button color="primary">Edit</button>
       <!-- router link on button -->
-      <button [routerLink]="['/listings', listing.id]"  mat-button>Read More</button>
+      <button [routerLink]="['/listings', listing.id]"  mat-raised-button color="primary">Read More</button>
     </mat-card-actions>
   </mat-card>
 </div>

@@ -6,4 +6,6 @@ export interface Listing {
    image: string;
    price: number;
   }
+
+
   

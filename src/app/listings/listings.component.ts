@@ -15,8 +15,10 @@ import { map, filter, subscribeOn } from 'rxjs/operators';
 
 export class ListingsComponent implements OnInit {
   @Input() myId: string;
+
   listings: Observable<Listing[]>;
   list: Observable<Listing>;
+
 
   constructor(private listeningService: ListingService, private db: AngularFirestore,  private router: Router    ) {
     // Get All Listings  from the listening service and store in listing member ... 
