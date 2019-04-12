@@ -8,11 +8,7 @@ import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-
 import { AngularFireStorageModule } from '@angular/fire/storage';
-
-
-
 import { environment } from '../environments/environment';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ListingsComponent } from './listings/listings.component';
@@ -23,9 +19,8 @@ import { LoginComponent } from './auth/login/login.component';
 import { AuthService } from './auth/auth.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ListingService } from './listings/listing.service';
-import { ChartComponent } from './chart/chart.component';
-import { DetailComponent } from './listings/detail/detail.component';
 import { ListComponent } from './list/list.component';
+import { ListDialogComponent } from './list-dialog/list-dialog.component';
 
 
 
@@ -39,9 +34,8 @@ import { ListComponent } from './list/list.component';
     SidenavListComponent,
     SignupComponent,
     LoginComponent,
-    ChartComponent,
-    DetailComponent,
     ListComponent,
+    ListDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +50,8 @@ import { ListComponent } from './list/list.component';
     ReactiveFormsModule
   ],
   providers: [AuthService, ListingService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ListDialogComponent]
+
 })
 export class AppModule { }

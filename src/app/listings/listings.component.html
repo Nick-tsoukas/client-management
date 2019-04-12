@@ -9,7 +9,7 @@
       </p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="primary">Edit</button>
+      <button (click)="editListing(listing)" mat-raised-button color="primary">Edit</button>
       <!-- router link on button -->
       <button [routerLink]="['/listings', listing.id]" mat-raised-button color="primary">Read More</button>
     </mat-card-actions>
