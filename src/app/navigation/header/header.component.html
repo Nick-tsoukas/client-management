@@ -15,5 +15,6 @@
     <a *ngIf="!isAuth" routerLink="/login">Login</a>
     <a *ngIf="isAuth" routerLink="/listings">Listings</a>
     <a *ngIf="isAuth" routerLink="/login" (click)="onLogout()">Log Out</a>
+    <a *ngIf="isAdmin" routerLink="/listings">Add Listing</a>
   </div>
 </mat-toolbar>
