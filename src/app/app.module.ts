@@ -9,6 +9,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { ListingsComponent } from './listings/listings.component';
 import { HeaderComponent } from './navigation/header/header.component';
@@ -45,7 +46,8 @@ import { ListDialogComponent } from './list-dialog/list-dialog.component';
     MaterialModule,
     FlexLayoutModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireAuthModule
   ],
   providers: [AuthService, ListingService],
   bootstrap: [AppComponent],

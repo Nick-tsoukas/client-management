@@ -3,57 +3,52 @@ import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { User } from './users.model';
 import { AuthData } from './auth-data.model';
+import { AngularFireAuth } from '@angular/fire/auth';
 
-// Makes service injectable ... services must have a decorator 
 @Injectable({
     providedIn: 'root',
   })
 export class AuthService {
     authChange =  new Subject<boolean>();
-
-    private user: User;
-
-    constructor(private router: Router){
+    private isAuthenticated : boolean = false ;
+    
+    constructor(private router: Router, private afAuth: AngularFireAuth){
 
     }
 
     registerUser(authData: AuthData){
-        this.user = {
-            email: authData.email,
-            userId: Math.round(Math.random() * 1000).toString()
-        };
-        // you are loged in Subject returns a boolean payload
-        // The next is like emit() but comes from a rxjs package next() emits the event out 
-        this.authChange.next(true);
-        this.router.navigate(['./listings']);
+        this.afAuth.auth.createUserWithEmailAndPassword(authData.email, authData.password)
+            .then(res => {
+                this.authSuccessfully();
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }
 
     logIn(authData: AuthData){
-        this.user = {
-            email: authData.email,
-            userId: Math.round(Math.random() * 1000).toString()
-        };
-
-        this.authChange.next(true)
-        this.router.navigate(['./listings']);
+       this.afAuth.auth.signInWithEmailAndPassword(authData.email, authData.password)
+        .then(res => {
+            this.authSuccessfully();
+        })
+        .catch(err => {
+            console.log(err)
+        })
     }
 
-    // sets user obj to null isAuth will return false 
     logOut(){
-        this.user = null;
+        this.isAuthenticated = false;
         this.authChange.next(false);
         this.router.navigate(['./login']);
     }
 
-    // returns a copy of user so not to change data to the original user 
-    getUser(){
-        return { ...this.user };
+    isAuth(){
+       return this.isAuthenticated
     }
 
-    // returns true is user is logged in ... false otherwise 
-    isAuth(){
-        // tempo auth logic removed for testng future routes ..
-        // return this.user != null;
-        return true;
+    private authSuccessfully(){
+        this.isAuthenticated = true;
+        this.authChange.next(true);
+        this.router.navigate(['./listings']);
     }
 }

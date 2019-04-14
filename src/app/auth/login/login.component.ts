@@ -14,10 +14,17 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(form: NgForm) {
+  register(form: NgForm){
     this.authService.registerUser({
       email: form.value.email,
       password: form.value.password
     });
+  }
+
+  login(form: NgForm){
+    this.authService.logIn({
+      email: form.value.email,
+      password: form.value.password
+    })
   }
 }
