@@ -10,7 +10,6 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from '../environments/environment';
-import { WelcomeComponent } from './welcome/welcome.component';
 import { ListingsComponent } from './listings/listings.component';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
@@ -28,7 +27,6 @@ import { ListDialogComponent } from './list-dialog/list-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent,
     ListingsComponent,
     HeaderComponent,
     SidenavListComponent,

@@ -1,11 +1,9 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
-import { Router } from '@angular/router'
+import { Component, OnInit} from '@angular/core';
 import { Listing } from './listing.model';
 import { ListingService } from './listing.service';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable, noop, pipe } from 'rxjs';
-import { map, filter, subscribeOn } from 'rxjs/operators';
-import {MatDialog, MatDialogConfig} from "@angular/material";
+import { Observable } from 'rxjs';
+import { MatDialog, MatDialogConfig } from "@angular/material";
 import { ListDialogComponent } from "../list-dialog/list-dialog.component";
 
 @Component({
@@ -29,7 +27,7 @@ export class ListingsComponent implements OnInit {
 
   }
 
-  editListing(listing:Listing) {
+  editListing(listing: Listing) {
 
     const dialogConfig = new MatDialogConfig();
 
@@ -40,11 +38,6 @@ export class ListingsComponent implements OnInit {
 
     this.dialog.open(ListDialogComponent, dialogConfig);
 
-}
-  // Calls getOne method from the listenings service to build one listings
-  // =============== will not use this method for app .... will use list resolver 
-  myClick(id: string) {
-    this.list = this.listeningService.getOne(id)
   }
 
 }

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { WelcomeComponent } from './welcome/welcome.component';
 import { ListingsComponent } from './listings/listings.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -11,10 +10,9 @@ import { ListResolver} from "./list.resolver";
 
 
 const routes: Routes = [
-  { path: '', component: SignupComponent },
+  { path: '', component: LoginComponent },
   { path: 'listings', component: ListingsComponent, canActivate:[AuthGuard] },
   { path: 'signup', component: SignupComponent},
-  { path: 'welcome', component: WelcomeComponent},
   { path: 'login', component: LoginComponent },
   {
     path: 'listings/:listId',

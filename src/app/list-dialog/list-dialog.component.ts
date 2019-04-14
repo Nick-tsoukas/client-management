@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material";
 import {Listing} from "../listings/listing.model";
+import { ListingService } from '../listings/listing.service';
 import {FormBuilder, Validators, FormGroup} from "@angular/forms";
 
 
@@ -15,17 +16,27 @@ export class ListDialogComponent implements OnInit {
   form: FormGroup;
   description:string;
 
+  listing: Listing;
+
   constructor(
       private fb: FormBuilder,
       private dialogRef: MatDialogRef<ListDialogComponent>,
-      @Inject(MAT_DIALOG_DATA) listing:Listing) {
+      @Inject(MAT_DIALOG_DATA) listing:Listing,
+      private listingService: ListingService) {
+        this.listing = listing;
+
+      this.dialogRef.afterClosed()
+        .subscribe(result => {
+          console.log(result)
+        })
 
       const city = listing;
-      this.title = city.streetAddress
+      this.title = listing.streetAddress
 
       this.form = fb.group({
-          description: [city.cityZip, Validators.required],
-          longDescription: [city.price,Validators.required]
+          streetAddress: [listing.streetAddress, Validators.required],
+          cityZip: [listing.cityZip,Validators.required],
+          price: [listing.price]
       });
 
   }
@@ -34,10 +45,15 @@ export class ListDialogComponent implements OnInit {
 
   }
 
-
+//  add to database here 
   save() {
+    const changes  = this.form.value;
 
-      this.dialogRef.close(this.form.value);
+    this.listingService.saveListing(this.listing.id, { cityZip: changes.cityZip, streetAddress: changes.streetAddress, price: changes.price })
+      .subscribe(
+        () => this.dialogRef.close(this.form.value)
+      )
+
 
   }
 
