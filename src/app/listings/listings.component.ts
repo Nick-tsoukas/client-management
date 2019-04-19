@@ -5,6 +5,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { MatDialog, MatDialogConfig } from "@angular/material";
 import { ListDialogComponent } from "../list-dialog/list-dialog.component";
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-listings',
@@ -18,13 +19,15 @@ export class ListingsComponent implements OnInit {
   listings: Observable<Listing[]>;
   list: Observable<Listing>;
 
-  constructor(private listeningService: ListingService, private dialog: MatDialog) {
+  constructor(private listeningService: ListingService, private dialog: MatDialog, private afAuth: AngularFireAuth) {
     // Get All Listings  from the listening service and store in listing member ... 
     this.listings = this.listeningService.getAll();
   }
 
   ngOnInit() {
-
+    this.afAuth.authState.subscribe(user => {
+    
+    })
   }
 
   editListing(listing: Listing) {

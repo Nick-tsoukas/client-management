@@ -19,7 +19,6 @@ export class ListComponent implements OnInit {
   ngOnInit() {
 
     this.list = this.route.snapshot.data['list'];
-    console.log(this.list)
 
 
 
