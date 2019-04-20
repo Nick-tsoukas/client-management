@@ -2,6 +2,8 @@ import { AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 
 import { Listing } from '../listings/listing.model';
 import { ActivatedRoute} from '@angular/router';
+import { Subscription } from 'rxjs';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-list',
@@ -13,7 +15,8 @@ export class ListComponent implements OnInit {
   list : Listing;
 
   constructor(
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute, private auth: AuthService) {
+      
   }
 
   ngOnInit() {

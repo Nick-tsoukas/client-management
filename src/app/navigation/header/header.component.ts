@@ -11,10 +11,18 @@ export class HeaderComponent implements OnInit, OnDestroy {
   // Outputs the click event to trigger the side nav open or close
   @Output() sidenavToggle = new EventEmitter<void>();
   isAuth : boolean;
+  adminLink: boolean;
   authSubscription: Subscription;
-  constructor(private authService: AuthService) { }
+  show : Subscription;
+  constructor(private authService: AuthService) {
+   }
 
   ngOnInit() {
+    this.show = this.authService.isAdmin.subscribe(val => {
+      this.adminLink = val; 
+    });
+
+    
     this.authSubscription = this.authService.authChange.subscribe(authStatus => {
       this.isAuth = authStatus;
     });

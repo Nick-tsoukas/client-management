@@ -6,6 +6,8 @@ import { LoginComponent } from './auth/login/login.component';
 import { ListComponent } from '../app/list/list.component'
 import { AuthGuard } from './auth/auth.guard';
 import { ListResolver} from "./list.resolver";
+import { AdminComponent } from './admin/admin.component';
+import { ChatComponent } from './chat/chat.component';
 
 
 
@@ -14,6 +16,11 @@ const routes: Routes = [
   { path: 'listings', component: ListingsComponent, canActivate:[AuthGuard] },
   { path: 'signup', component: SignupComponent},
   { path: 'login', component: LoginComponent },
+  { path: 'admin', component: AdminComponent,
+  children: [
+    { path: 'chat', component: ChatComponent },
+    { path: 'listing', component: ListingsComponent }
+  ]},
   {
     path: 'listings/:listId',
     component: ListComponent,

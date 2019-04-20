@@ -21,6 +21,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ListingService } from './listings/listing.service';
 import { ListComponent } from './list/list.component';
 import { ListDialogComponent } from './list-dialog/list-dialog.component';
+import { AvatarModule } from 'ng2-avatar';
+import { AdminComponent } from './admin/admin.component';
+import { ChatComponent } from './chat/chat.component';
 
 
 
@@ -35,6 +38,8 @@ import { ListDialogComponent } from './list-dialog/list-dialog.component';
     LoginComponent,
     ListComponent,
     ListDialogComponent,
+    AdminComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +52,7 @@ import { ListDialogComponent } from './list-dialog/list-dialog.component';
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
+    AvatarModule.forRoot(), 
     AngularFireAuthModule
   ],
   providers: [AuthService, ListingService],

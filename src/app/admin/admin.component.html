@@ -1,0 +1,29 @@
+<section fxLayout="row" class="dashboard_container">
+  <div class="side_bar" fxFlex="20%">
+    <mat-list>
+      <a routerLink="/admin/chat">
+      <mat-list-item>
+       <span> <mat-icon color="primary" class="icon_padding">chat</mat-icon></span> Chat
+      </mat-list-item>
+    </a>
+    <a routerLink="/admin/chat">
+      <mat-list-item>
+       <span> <mat-icon color="primary" class="icon_padding">people</mat-icon></span> Users
+      </mat-list-item>
+    </a>
+    <a routerLink="/admin/listing">
+      <mat-list-item>
+       <span> <mat-icon color="primary" class="icon_padding">home</mat-icon></span> View Listings
+      </mat-list-item>
+    </a>
+    <a routerLink="/admin/chat">
+      <mat-list-item>
+       <span> <mat-icon color="primary" class="icon_padding">add</mat-icon></span> Add Listing
+      </mat-list-item>
+    </a>
+    </mat-list>
+  </div>
+  <div class="main_background" fxFlex="100">
+    <router-outlet></router-outlet>
+  </div>
+</section>

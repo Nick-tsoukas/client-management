@@ -11,6 +11,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatSelectModule, MatSelect } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatExpansionModule} from '@angular/material/expansion';
+
 
 
 
@@ -30,7 +32,8 @@ import {MatDialogModule} from '@angular/material/dialog';
         MatTabsModule,
         MatSelectModule,
         MatGridListModule,
-        MatDialogModule
+        MatDialogModule,
+        MatExpansionModule
     ],
     exports: [
         MatButtonModule,
@@ -47,7 +50,8 @@ import {MatDialogModule} from '@angular/material/dialog';
         MatTabsModule,
         MatSelectModule,
         MatGridListModule,
-        MatDialogModule
+        MatDialogModule,
+        MatExpansionModule
     ]
 })
 export class MaterialModule {

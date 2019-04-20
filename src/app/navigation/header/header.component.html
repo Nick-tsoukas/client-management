@@ -1,4 +1,4 @@
-<mat-toolbar class="mat-elevation-z12" color="primary">
+<mat-toolbar color="primary">
   <div >
     <button (click)="onToggleSidenav()" mat-icon-button>
       <mat-icon aria-label="Menu">menu</mat-icon>
@@ -13,8 +13,12 @@
   <div class="navPadding" fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
     <a *ngIf="!isAuth" routerLink="/signup">Sign Up</a>
     <a *ngIf="!isAuth" routerLink="/login">Login</a>
-    <a *ngIf="isAuth" routerLink="/listings">Listings</a>
+    <a *ngIf="adminLink" routerLink="/admin">Dashboard</a>
+    <a *ngIf="isAuth && !adminLink" routerLink="/listings">Listings</a>
+    <a *ngIf="adminLink" routerLink="/admin/listing">Listings </a>
+    <a *ngIf="adminLink" routerLink="/listings">Add Listing</a>
     <a *ngIf="isAuth" routerLink="/login" (click)="onLogout()">Log Out</a>
-    <a *ngIf="isAdmin" routerLink="/listings">Add Listing</a>
+
   </div>
 </mat-toolbar>
+

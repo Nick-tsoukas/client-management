@@ -14,9 +14,10 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class AuthService {
     authChange = new Subject<boolean>();
-    user : User;
+    user: User;
     userChange = new Subject<User>();
     private isAuthenticated: boolean = false;
+    isAdmin = new Subject<boolean>();
 
     constructor(private router: Router, private afAuth: AngularFireAuth, private afs: AngularFirestore) { }
     authListener() {
@@ -25,8 +26,16 @@ export class AuthService {
                 this.isAuthenticated = true;
                 this.userChange.next(this.user);
                 this.authChange.next(true);
-                this.router.navigate(['./listings']);
+                if (user.uid === 'jsfbs6IY3NTeKA1VmcGamSYtJSI3') {
+                    this.isAdmin.next(true);
+                    this.router.navigate(['./admin']);
+
+                }
+                else {
+                    this.router.navigate(['./listings']);
+                }
             } else {
+                this.isAdmin.next(false);
                 this.isAuthenticated = false;
                 this.userChange.next(null);
                 this.authChange.next(false);
@@ -39,14 +48,14 @@ export class AuthService {
     registerUser(authData: AuthData) {
         this.afAuth.auth.createUserWithEmailAndPassword(authData.email, authData.password)
             .then(res => {
-              // sets the member 
-              this.user = {
-                  email: authData.email,
-                  uid: this.afAuth.auth.currentUser.uid,
-                  name: this.afAuth.auth.currentUser.displayName
-              };
-            //   Sets the document id the the user id from angular fire auth 
-              this.afs.collection('users').doc(`${this.afAuth.auth.currentUser.uid}`).set(this.user);
+                // sets the member 
+                this.user = {
+                    email: authData.email,
+                    uid: this.afAuth.auth.currentUser.uid,
+                    name: this.afAuth.auth.currentUser.displayName
+                };
+                //   Sets the document id the the user id from angular fire auth 
+                this.afs.collection('users').doc(`${this.afAuth.auth.currentUser.uid}`).set(this.user);
 
             })
             .catch(err => {
@@ -72,6 +81,7 @@ export class AuthService {
     }
 
     logOut() {
+        this.isAdmin.next(false);
         console.log(this.user)
         this.afAuth.auth.signOut();
         console.log(this.user)
@@ -80,5 +90,9 @@ export class AuthService {
 
     isAuth() {
         return this.isAuthenticated
+    }
+
+    isSuper() {
+        return this.isAdmin;
     }
 }
