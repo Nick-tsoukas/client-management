@@ -24,6 +24,9 @@ import { ListDialogComponent } from './list-dialog/list-dialog.component';
 import { AvatarModule } from 'ng2-avatar';
 import { AdminComponent } from './admin/admin.component';
 import { ChatComponent } from './chat/chat.component';
+import { AdminListingComponent } from './admin/admin-listings/admin-listings.component';
+import { UserListComponent } from './admin/user-list/user-list.component';
+
 
 
 
@@ -40,6 +43,8 @@ import { ChatComponent } from './chat/chat.component';
     ListDialogComponent,
     AdminComponent,
     ChatComponent,
+    AdminListingComponent,
+    UserListComponent,
   ],
   imports: [
     BrowserModule,

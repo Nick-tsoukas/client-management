@@ -8,6 +8,8 @@ import { AuthGuard } from './auth/auth.guard';
 import { ListResolver} from "./list.resolver";
 import { AdminComponent } from './admin/admin.component';
 import { ChatComponent } from './chat/chat.component';
+import { AdminListingComponent } from './admin/admin-listings/admin-listings.component';
+import { UserListComponent } from './admin/user-list/user-list.component';
 
 
 
@@ -19,7 +21,8 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent,
   children: [
     { path: 'chat', component: ChatComponent },
-    { path: 'listing', component: ListingsComponent }
+    { path: 'listing', component: AdminListingComponent },
+    { path: 'users', component: UserListComponent }
   ]},
   {
     path: 'listings/:listId',
