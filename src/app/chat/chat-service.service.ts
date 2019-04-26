@@ -43,7 +43,8 @@ export class ChatServiceService {
   addMessage(id, message){
     this.db.collection(`users/${id}/chat`).add({
       "message": message,
-      "time": new Date()
+      "time": new Date(),
+      "adminMessage": true
     });
   }
 
