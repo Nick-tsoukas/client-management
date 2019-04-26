@@ -10,6 +10,7 @@ import { AdminComponent } from './admin/admin.component';
 import { ChatComponent } from './chat/chat.component';
 import { AdminListingComponent } from './admin/admin-listings/admin-listings.component';
 import { UserListComponent } from './admin/user-list/user-list.component';
+import { ChatResolver } from './chat.resolver';
 
 
 
@@ -20,7 +21,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'admin', component: AdminComponent,
   children: [
-    { path: 'chat', component: ChatComponent },
+    { path: 'chat/:userId', component: ChatComponent, resolve: {
+      chat: ChatResolver
+  }},
     { path: 'listing', component: AdminListingComponent },
     { path: 'users', component: UserListComponent }
   ]},
@@ -36,7 +39,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [AuthGuard, ListResolver]
+  providers: [AuthGuard, ListResolver, ChatResolver]
 })
 export class AppRoutingModule { }
 

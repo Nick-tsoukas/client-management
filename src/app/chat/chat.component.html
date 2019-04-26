@@ -1,4 +1,16 @@
-<h1>
-  This is the chat sub-component 
-  See the url should be admin/chat
-</h1>
+
+  <app-message-count>
+  </app-message-count>
+
+<div *ngFor="let chat of chats | async">
+ {{chat.message}}
+</div>
+
+<div style="margin-top:4em;">
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="">
+    <mat-form-field class="">
+      <input matInput placeholder="Type Message" ngModel name="message">
+    </mat-form-field>
+    <button type="submit">send</button>
+  </form>
+</div>

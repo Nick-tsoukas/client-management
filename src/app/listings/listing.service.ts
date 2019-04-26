@@ -14,6 +14,17 @@ export class ListingService implements OnInit {
    return  from(this.db.doc(`availableListings/${listingId}`).update(changes))
   }
 
+  getChats(id:string){
+    return this.db.doc(`users/${id}`).snapshotChanges()
+      .pipe(
+        map(snap => {
+          return {
+            ...snap.payload.data()
+          }
+        })
+      )
+  }
+
   getOne(id: string): Observable<Listing> {
     console.log(id);
     return this.db.doc(`availableListings/${id}`).snapshotChanges()

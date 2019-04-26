@@ -26,6 +26,8 @@ import { AdminComponent } from './admin/admin.component';
 import { ChatComponent } from './chat/chat.component';
 import { AdminListingComponent } from './admin/admin-listings/admin-listings.component';
 import { UserListComponent } from './admin/user-list/user-list.component';
+import { ChatServiceService  } from './chat/chat-service.service';
+import { MessageCountComponent } from './chat/message-count/message-count.component';
 
 
 
@@ -45,6 +47,7 @@ import { UserListComponent } from './admin/user-list/user-list.component';
     ChatComponent,
     AdminListingComponent,
     UserListComponent,
+    MessageCountComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,7 @@ import { UserListComponent } from './admin/user-list/user-list.component';
     AvatarModule.forRoot(), 
     AngularFireAuthModule
   ],
-  providers: [AuthService, ListingService],
+  providers: [AuthService, ListingService, ChatServiceService],
   bootstrap: [AppComponent],
   entryComponents: [ListDialogComponent]
 

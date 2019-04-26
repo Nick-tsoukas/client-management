@@ -18,7 +18,8 @@
       <th mat-header-cell *matHeaderCellDef> Email </th>
       <td mat-cell *matCellDef="let element">
         <div style="display: flex; align-items: center;" >
-          <a> <span style="padding-right: 1em;"><mat-icon color="accent">chat</mat-icon></span></a>
+
+          <a routerLink="/admin/chat/{{element.uid}}"> <span style="padding-right: 1em;"><mat-icon color="accent">chat</mat-icon></span></a>
           {{element.email}} 
         </div>
          </td>

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChartComponent } from './chart.component';
+import { MessageCountComponent } from './message-count.component';
 
-describe('ChartComponent', () => {
-  let component: ChartComponent;
-  let fixture: ComponentFixture<ChartComponent>;
+describe('MessageCountComponent', () => {
+  let component: MessageCountComponent;
+  let fixture: ComponentFixture<MessageCountComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChartComponent ]
+      declarations: [ MessageCountComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ChartComponent);
+    fixture = TestBed.createComponent(MessageCountComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
