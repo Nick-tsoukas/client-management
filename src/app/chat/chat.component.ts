@@ -21,29 +21,16 @@ export class ChatComponent implements OnInit {
    @Input()
    chats: Observable<any>;
 
-   // users userid chat collection .... lets add A Chat message 
-  // addMessage(id, message: string){
-  //   this.db.collection(`users/${id}chat`).add(message);
-  // }
-
    onSubmit(formData){
-     console.log('adding message!+!+!')
     this.chatService.addMessage(this.userId,formData.value.message);
    }
 
 
   constructor(private chatService: ChatServiceService, private route: ActivatedRoute, private db : AngularFirestore) { 
     
-
     this.userId = this.route.snapshot.data['chat']['uid'];
 
   }
-
-  // create form and get form data 
-  // we already have the user id 
-  // get Message 
-  // call add message on click event in html 
-
   ngOnInit() {
     this.chats = this.chatService.getMes(this.userId);
   }

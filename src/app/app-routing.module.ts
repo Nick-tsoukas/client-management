@@ -11,6 +11,7 @@ import { ChatComponent } from './chat/chat.component';
 import { AdminListingComponent } from './admin/admin-listings/admin-listings.component';
 import { UserListComponent } from './admin/user-list/user-list.component';
 import { ChatResolver } from './chat.resolver';
+import { UserChatComponent } from './user-chat/user-chat.component';
 
 
 
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'listings', component: ListingsComponent, canActivate:[AuthGuard] },
   { path: 'signup', component: SignupComponent},
   { path: 'login', component: LoginComponent },
+  { path: 'chat', component: UserChatComponent},
   { path: 'admin', component: AdminComponent,
   children: [
     { path: 'chat/:userId', component: ChatComponent, resolve: {

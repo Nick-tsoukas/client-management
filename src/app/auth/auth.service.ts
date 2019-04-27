@@ -14,8 +14,11 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class AuthService {
     authChange = new Subject<boolean>();
+    userId: string;
     user: User;
+
     userChange = new Subject<User>();
+
     private isAuthenticated: boolean = false;
     isAdmin = new Subject<boolean>();
 
@@ -24,7 +27,8 @@ export class AuthService {
         this.afAuth.authState.subscribe(user => {
             if (user) {
                 this.isAuthenticated = true;
-                this.userChange.next(this.user);
+                // this.userChange.next(this.user);
+                this.userId = user.uid;
                 this.authChange.next(true);
                 if (user.uid === 'jsfbs6IY3NTeKA1VmcGamSYtJSI3') {
                     this.isAdmin.next(true);
@@ -37,7 +41,7 @@ export class AuthService {
             } else {
                 this.isAdmin.next(false);
                 this.isAuthenticated = false;
-                this.userChange.next(null);
+                // this.userChange.next(null);
                 this.authChange.next(false);
                 this.router.navigate(["./login"]);
             }
@@ -82,10 +86,7 @@ export class AuthService {
 
     logOut() {
         this.isAdmin.next(false);
-        console.log(this.user)
         this.afAuth.auth.signOut();
-        console.log(this.user)
-
     }
 
     isAuth() {

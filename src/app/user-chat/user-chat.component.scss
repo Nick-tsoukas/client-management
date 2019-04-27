@@ -1,0 +1,20 @@
+.adminBubble {
+    border-radius: 18px;
+    // background: rgba(255, 255, 255, .9);
+    background: grey;
+    padding: 1em;
+    border-bottom-left-radius: 2px
+
+}
+
+
+
+.userBubble {
+    text-align: right;
+    display: inline;
+    width: auto;
+    border-radius: 18px;
+    background: #3F51B5;
+    padding:1em;
+    border-bottom-right-radius: 2px;
+}

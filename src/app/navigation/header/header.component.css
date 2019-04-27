@@ -32,3 +32,9 @@ main {
   display: inline-block;
   padding-left: 2em;
 }
+
+
+.icon_label {
+  line-height: 1.2;
+  font-size: .7em;
+}

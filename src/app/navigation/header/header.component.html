@@ -1,24 +1,57 @@
 <mat-toolbar color="primary">
-  <div >
+  <!-- <div>
     <button (click)="onToggleSidenav()" mat-icon-button>
       <mat-icon aria-label="Menu">menu</mat-icon>
     </button>
-  </div>
+  </div> -->
+  <!-- lets make three routes ...
+  ============================
 
-  <div>
-    <a routerLink="/">LOGO
-    </a>
+  1. Listings 
+  2. chat 
+  3. favorites 
+
+  use icons for this 
+  -->
+
+  <div fxLayout fxLayoutAlign="center center" style="width: 100%;">
+    <!-- four flex items in flex container -->
+    <div fxFlex="auto" fxLayout='column' fxLayoutAlign="center center ">
+      <a fxLayoutAlign="center center" fxLayout='column' routerLink="/listings">
+        <mat-icon aria-label="Menu">home</mat-icon>
+        <span class="icon_label">Listings</span>
+      </a>
+    </div>
+
+    <div fxFlex="auto" fxLayout='column' fxLayoutAlign="center center ">
+      <a fxLayoutAlign="center center" fxLayout='column' routerLink="/chat">
+        <mat-icon aria-label="Menu">chat</mat-icon>
+        <span class="icon_label">Chat</span>
+      </a>
+    </div>
+
+    <div fxFlex="auto" fxLayout='column' fxLayoutAlign="center center ">
+        <a fxLayoutAlign="center center" fxLayout='column' routerLink="/chat">
+          <mat-icon aria-label="Menu">chat</mat-icon>
+          <span class="icon_label">Chat</span>
+        </a>
+      </div>
+
+    <div fxFlex="auto" fxLayout='column' fxLayoutAlign="center center ">
+      <mat-icon aria-label="Menu" (click)="onToggleSidenav()">menu</mat-icon>
+      <span class="icon_label">More</span>
+    </div>
+
   </div>
 
   <div class="navPadding" fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
     <a *ngIf="!isAuth" routerLink="/signup">Sign Up</a>
     <a *ngIf="!isAuth" routerLink="/login">Login</a>
     <a *ngIf="adminLink" routerLink="/admin">Dashboard</a>
-    <a *ngIf="isAuth && !adminLink" routerLink="/listings">Listings</a>
+    <a fxHide.sm *ngIf="isAuth && !adminLink" routerLink="/listings">Listings</a>
     <a *ngIf="adminLink" routerLink="/admin/listing">Listings </a>
     <a *ngIf="adminLink" routerLink="/listings">Add Listing</a>
     <a *ngIf="isAuth" routerLink="/login" (click)="onLogout()">Log Out</a>
-
   </div>
-</mat-toolbar>
 
+</mat-toolbar>
