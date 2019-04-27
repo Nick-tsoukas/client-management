@@ -17,3 +17,30 @@
  padding-left: 1em;
  padding-right:1em;
 }
+
+@media only screen and (max-width: 600px) {
+    .side_nav_label {
+     display: none;
+    }
+  }
+  
+
+ .link_admin_nav:visited {
+    color:inherit;
+}
+
+.link_admin_nav:active {
+}
+
+.center {
+    text-align: center;
+
+}
+
+.center:focus {
+  outline: 0  !important;
+}
+
+.center:active {
+    color: red;
+}

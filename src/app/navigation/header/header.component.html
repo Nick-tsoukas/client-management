@@ -14,7 +14,7 @@
   use icons for this 
   -->
 
-  <div fxLayout fxLayoutAlign="center center" style="width: 100%;">
+  <div *ngIf="!adminLink" fxLayout fxLayoutAlign="center center" style="width: 100%;">
     <!-- four flex items in flex container -->
     <div fxFlex="auto" fxLayout='column' fxLayoutAlign="center center ">
       <a fxLayoutAlign="center center" fxLayout='column' routerLink="/listings">
@@ -42,6 +42,10 @@
       <span class="icon_label">More</span>
     </div>
 
+  </div>
+
+  <div *ngIf="adminLink">
+    <mat-icon aria-label="Menu" (click)="onToggleSidenav()">menu</mat-icon>
   </div>
 
   <div class="navPadding" fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>

@@ -1,29 +1,47 @@
-<section fxLayout="row" class="dashboard_container">
-  <div class="side_bar" fxFlex="20%">
-    <mat-list>
-      <a routerLink="/admin/chat">
-      <mat-list-item>
-       <span> <mat-icon color="primary" class="icon_padding">chat</mat-icon></span> Chat
-      </mat-list-item>
+<section>
+  <mat-toolbar  fxLayout="row" fxLayoutAlign="center center" style="background: white; color:#3f51b5">
+    <!-- <a disableRipple="true"    class="link_admin_nav" routerLink="/admin/users" style="width: 100%; text-align:center;" href="">
+        <mat-icon class="icon_padding">people</mat-icon>
+    </a> -->
+    <mat-icon class="center" fxFlex fxFlexAlign="center" routerLink="/admin/listing"> home</mat-icon>
+    <mat-icon class="center" fxFlex fxFlexAlign="center" routerLink="/admin/users"> people</mat-icon>
+    <mat-icon class="center" fxFlex fxFlexAlign="center" routerLink="/admin/add"> add</mat-icon>
+    <!-- <a routerLink="/admin/listing" style="width: 100%; text-align:center;"  href="">
+        <mat-icon class="icon_padding">home</mat-icon>
     </a>
+    <a routerLink="/admin/add" style="width: 100%; text-align:center;"  href="">
+        <mat-icon class="icon_padding">add</mat-icon>
+    </a> -->
+  </mat-toolbar>
+</section>
+
+<section fxLayout="row" class="dashboard_container">
+
+  <div class="side_bar" fxFlex="20%" fxHide.lt-sm>
+    <mat-list>
     <a routerLink="/admin/users">
       <mat-list-item>
-       <span> <mat-icon color="primary" class="icon_padding">people</mat-icon></span> Users
+       <span> <mat-icon color="primary" class="icon_padding">people</mat-icon></span>
+       <span class="side_nav_label">USERS</span>
       </mat-list-item>
     </a>
     <a routerLink="/admin/listing">
       <mat-list-item>
-       <span> <mat-icon color="primary" class="icon_padding">home</mat-icon></span> View Listings
+       <span> <mat-icon color="primary" class="icon_padding">home</mat-icon></span> 
+       <span class="side_nav_label">Listings</span>
       </mat-list-item>
     </a>
     <a routerLink="/admin/chat">
       <mat-list-item>
-       <span> <mat-icon color="primary" class="icon_padding">add</mat-icon></span> Add Listing
+       <span> <mat-icon color="primary" class="icon_padding">add</mat-icon></span> 
+       <span class="side_nav_label"> Add Listing </span>
       </mat-list-item>
     </a>
     </mat-list>
   </div>
+
   <div class="main_background main_container" fxFlex="100">
+
     <router-outlet></router-outlet>
   </div>
 </section>
