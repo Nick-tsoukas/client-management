@@ -1,7 +1,7 @@
-<mat-toolbar color="primary">
+<mat-toolbar class="mobile_toolbar_user" color="primary">
 
  <!-- ============== Nav For Mobile  -->
-  <div fxHide.gt-xs *ngIf="!adminLink && isAuth" fxLayout fxLayoutAlign="center center" style="width: 100%;">
+  <div  fxHide.gt-xs *ngIf="!adminLink && isAuth" fxLayout fxLayoutAlign="center center" style="width: 100%;">
     <!-- four flex items in flex container -->
     <div fxFlex="auto" fxLayout='column' fxLayoutAlign="center center ">
       <a fxLayoutAlign="center center" fxLayout='column' routerLink="/listings">

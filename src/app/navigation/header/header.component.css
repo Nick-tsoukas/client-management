@@ -4,6 +4,11 @@ mat-sidenav {
   height: 100%;
 }
 
+.mobile_toolbar_user {
+  position: fixed;
+  z-index: 99999999;
+}
+
 mat-sidenav {
   width: 250px;
   text-align: center;
