@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
 import { ChatServiceService } from '../chat/chat-service.service';
 
@@ -41,5 +41,8 @@ export class UserChatComponent implements OnInit {
     })
 
   }
+
+  ngAfterViewInit() {         
+  }  
 
 }

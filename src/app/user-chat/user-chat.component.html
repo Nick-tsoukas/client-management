@@ -1,4 +1,4 @@
-<div class="chats_messages" fxLayout="column">
+<div id="message_container" class="chats_messages" fxLayout="column">
   <div *ngFor="let chat of chats | async ">
     <div class="testing" fxLayout="column">
       <p class="userBubble" *ngIf="!chat.adminMessage; else adminMessage">
@@ -6,13 +6,16 @@
       </p>
     </div>
     <ng-template #adminMessage>
-      <div style="width: 100%" fxLayout="row" [ngStyle]="{ 'text-align' : 'left'}">
+      <div fxLayout="row" [ngStyle]="{ 'text-align' : 'left'}">
         <p class="adminBubble">{{chat.message}}</p>
       </div>
     </ng-template>
 
   </div>
+  
 </div>
+
+    
 
 <div class="chat_box">
 
