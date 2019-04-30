@@ -1,6 +1,4 @@
 
-  <app-message-count>
-  </app-message-count>
 
 <div  *ngFor="let chat of chats | async">
   <p [ngStyle]="{'text-align': 'right', 'border-right' : '2px solid blue'}" *ngIf='chat.adminMessage; else userMessage'>Admin message {{chat.message}} </p>

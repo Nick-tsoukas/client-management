@@ -20,14 +20,14 @@ const routes: Routes = [
   { path: 'listings', component: ListingsComponent, canActivate:[AuthGuard] },
   { path: 'signup', component: SignupComponent},
   { path: 'login', component: LoginComponent },
-  { path: 'chat', component: UserChatComponent},
-  { path: 'admin', component: AdminComponent,
+  { path: 'chat', component: UserChatComponent, canActivate:[AuthGuard]},
+  { path: 'admin', component: AdminComponent,canActivate:[AuthGuard],
   children: [
-    { path: 'chat/:userId', component: ChatComponent, resolve: {
+    { path: 'chat/:userId', component: ChatComponent,canActivate:[AuthGuard], resolve: {
       chat: ChatResolver
   }},
-    { path: 'listing', component: AdminListingComponent },
-    { path: 'users', component: UserListComponent }
+    { path: 'listing', component: AdminListingComponent, canActivate:[AuthGuard] },
+    { path: 'users', component: UserListComponent, canActivate:[AuthGuard] }
   ]},
   {
     path: 'listings/:listId',

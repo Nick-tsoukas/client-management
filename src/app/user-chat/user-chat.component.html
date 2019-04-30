@@ -1,26 +1,37 @@
-<h1>user Chat </h1>
-<div style="padding: 1em;" fxLayout="column">
+<div class="chats_messages" fxLayout="column">
   <div *ngFor="let chat of chats | async ">
-    <div  fxLayout="column" fxLayoutAlign="end">
-
-    <p style=" display:inline" class="userBubble" *ngIf="!chat.adminMessage; else adminMessage">
-      {{ chat.message }}
-    </p>
-  </div>
+    <div class="testing" fxLayout="column">
+      <p class="userBubble" *ngIf="!chat.adminMessage; else adminMessage">
+        {{ chat.message }}
+      </p>
+    </div>
     <ng-template #adminMessage>
-      <div [ngStyle]="{ 'text-align' : 'left', 'margin': '2em'}">
-       <p style=" display:inline" class="adminBubble">{{chat.message}}</p>
+      <div style="width: 100%" fxLayout="row" [ngStyle]="{ 'text-align' : 'left'}">
+        <p class="adminBubble">{{chat.message}}</p>
       </div>
     </ng-template>
 
   </div>
 </div>
 
-<div style="margin-top:4em;">
-  <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="">
-    <mat-form-field class="">
-      <input matInput placeholder="Type Message" ngModel name="message">
-    </mat-form-field>
-    <button type="submit">send</button>
+<div class="chat_box">
+
+  <div class="border_left">
+    <mat-icon (click)="deleteAll()">add</mat-icon>
+  </div>
+
+  <form fxLayout="row" (ngSubmit)="onSubmit(f)" #f="ngForm" class="message_form">
+
+  <div fxFlex="85%"  class="message_input_container">
+      <input id="messageInput" class="text_input" type="textarea" placeholder="Type a message..." (ngModel)="messageValue" name="message">
+  </div>
+
+  <div fxFlex="15%" class="right_icon">
+    <button type="submit">
+      <mat-icon color="primary">send</mat-icon>
+    </button>
+  </div>
+
   </form>
+
 </div>

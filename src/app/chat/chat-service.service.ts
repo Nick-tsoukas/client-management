@@ -56,5 +56,20 @@ export class ChatServiceService {
     })
   }
 
+  getAllId(id){
+     return this.db.collection(`users/${id}/chat`).snapshotChanges()
+      .pipe(
+        map(snaps => {
+          return snaps.map(snap => {
+            return snap.payload.doc.id;
+          })
+        })
+      )
+  }
+
+  delete(userId,docId){
+    this.db.doc(`users/${userId}/chat/${docId}`).delete()
+  }
+
 
 }

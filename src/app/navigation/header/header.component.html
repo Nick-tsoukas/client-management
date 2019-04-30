@@ -1,20 +1,7 @@
 <mat-toolbar color="primary">
-  <!-- <div>
-    <button (click)="onToggleSidenav()" mat-icon-button>
-      <mat-icon aria-label="Menu">menu</mat-icon>
-    </button>
-  </div> -->
-  <!-- lets make three routes ...
-  ============================
 
-  1. Listings 
-  2. chat 
-  3. favorites 
-
-  use icons for this 
-  -->
-
-  <div *ngIf="!adminLink" fxLayout fxLayoutAlign="center center" style="width: 100%;">
+ <!-- ============== Nav For Mobile  -->
+  <div fxHide.gt-xs *ngIf="!adminLink && isAuth" fxLayout fxLayoutAlign="center center" style="width: 100%;">
     <!-- four flex items in flex container -->
     <div fxFlex="auto" fxLayout='column' fxLayoutAlign="center center ">
       <a fxLayoutAlign="center center" fxLayout='column' routerLink="/listings">
@@ -32,8 +19,8 @@
 
     <div fxFlex="auto" fxLayout='column' fxLayoutAlign="center center ">
         <a fxLayoutAlign="center center" fxLayout='column' routerLink="/chat">
-          <mat-icon aria-label="Menu">chat</mat-icon>
-          <span class="icon_label">Chat</span>
+          <mat-icon aria-label="Menu">favorite</mat-icon>
+          <span class="icon_label">Favorite</span>
         </a>
       </div>
 
@@ -47,6 +34,10 @@
   <div *ngIf="adminLink">
     <mat-icon aria-label="Menu" (click)="onToggleSidenav()">menu</mat-icon>
   </div>
+
+  <!--  End of mobile Nav  -->
+
+  <!-- Nav for desktop  -->
 
   <div class="navPadding" fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
     <a *ngIf="!isAuth" routerLink="/signup">Sign Up</a>

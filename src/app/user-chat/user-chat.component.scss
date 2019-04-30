@@ -11,11 +11,77 @@
 
 .userBubble {
     text-align: right;
-    display: inline;
-    
-    width: auto;
+    width: max-content;
     border-radius: 18px;
     background: #3F51B5;
     padding:1em;
     border-bottom-right-radius: 2px;
+
+}
+
+.testing {
+    align-items: flex-end;
+}
+
+.input_box{
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+}
+
+.full_width {
+    width: 100%;
+    padding-left: .5em;
+    margin-right: .5em;
+}
+
+.chat_box {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    border: 1px solid black;
+    height:40px;
+    z-index: 99999;
+    background: white;
+
+    display: grid;
+    grid-template-columns: 15% 85%;
+}
+
+.chats_messages { 
+    overflow-y: auto;
+    padding-left:1em;
+    padding-right: 1em;
+    padding-bottom: 2.5em;
+}
+
+.border_left {
+    display: flex;
+
+    border-right: solid 1px black;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.right_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid black ;
+}
+
+.message_input_container {
+    display: flex;
+    align-items: center;
+    padding-left: .5em;
+}
+
+.text_input{
+    font-size: 1em;
+
+}
+
+.text_input:focus{
+   outline: none;
 }
