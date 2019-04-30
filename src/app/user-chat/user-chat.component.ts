@@ -12,9 +12,11 @@ export class UserChatComponent implements OnInit {
   chats: any;
   ids: any;
   ar: string[];
+  testing : number ;
 
   onSubmit(formData) {
     this.chatService.userAddMessage(this.userId,formData.value.message);
+
     // resets form after submit message 
     formData.reset();
   }
