@@ -1,6 +1,45 @@
-
-
-<div  *ngFor="let chat of chats | async">
+<div #message  [scrollTop]="message.scrollHeight" id="message_container" class="chats_messages" fxLayout="column">
+    <div *ngFor="let chat of chats | async ">
+      <div *ngIf="!chat.adminMessage; else adminMessage" class="testing" fxLayout="row">
+        <p class="userBubble" >
+          {{ chat.message }}
+        </p>
+      </div>
+      <ng-template #adminMessage>
+        <div fxLayout="row" class="adminRow">
+          <p class="adminBubble">{{chat.message}}</p>
+        </div>
+      </ng-template>
+  
+    </div>
+    
+  </div>
+  
+      
+  
+  <div class="chat_box">
+  
+    <div class="border_left">
+      <mat-icon (click)="deleteAll()">add</mat-icon>
+    </div>
+  
+    <form fxLayout="row" (ngSubmit)="onSubmit(f)" #f="ngForm" class="message_form">
+  
+    <div fxFlex="85%"  class="message_input_container">
+        <input id="messageInput" class="text_input" type="textarea" placeholder="Type a message..." (ngModel)="messageValue" name="message">
+    </div>
+  
+    <div fxFlex="15%" class="right_icon">
+      <button type="submit">
+        <mat-icon color="primary">send</mat-icon>
+      </button>
+    </div>
+  
+    </form>
+  
+  </div>
+  
+<!-- <div  *ngFor="let chat of chats | async">
   <p [ngStyle]="{'text-align': 'right', 'border-right' : '2px solid blue'}" *ngIf='chat.adminMessage; else userMessage'>Admin message {{chat.message}} </p>
   <ng-template  #userMessage> 
     <p [ngStyle]="{'border-left' : '2px solid red'}">User message: {{chat.message}}</p>
@@ -14,6 +53,6 @@
     </mat-form-field>
     <button type="submit">send</button>
   </form>
-</div>
+</div> -->
 
 <!-- [ngStyle]="{'background-color':person.country === 'UK' ? 'green' : 'red' }" -->

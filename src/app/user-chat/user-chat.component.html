@@ -1,8 +1,7 @@
 <div #message  [scrollTop]="message.scrollHeight" id="message_container" class="chats_messages" fxLayout="column">
   <div *ngFor="let chat of chats | async ">
-    <div class="testing" fxLayout="column">
-      
-      <p class="userBubble" *ngIf="!chat.adminMessage; else adminMessage">
+    <div *ngIf="!chat.adminMessage; else adminMessage" class="testing" fxLayout="column">
+      <p class="userBubble">
         {{ chat.message }}
       </p>
     </div>

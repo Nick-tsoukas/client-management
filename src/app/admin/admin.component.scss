@@ -7,6 +7,7 @@
 .side_bar {
     background-color: #f5f5f5;
     font-weight: bold;
+    margin-top: 64px;
 }
 
 .icon_padding {
@@ -14,9 +15,9 @@
 }
 
 .main_container {
- padding-left: 1em;
- padding-right:1em;
+
 }
+
 
 @media only screen and (max-width: 600px) {
     .side_nav_label {
@@ -29,8 +30,6 @@
     color:inherit;
 }
 
-.link_admin_nav:active {
-}
 
 .center {
     text-align: center;

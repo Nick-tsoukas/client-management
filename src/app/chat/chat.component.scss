@@ -1,0 +1,96 @@
+.userBubble {
+    border-radius: 18px;
+    // background: rgba(255, 255, 255, .9);
+    background: #F5F5F5;
+    padding: 1em;
+    border-bottom-left-radius: 2px
+
+}
+
+.adminRow {
+  justify-content: flex-end;
+}
+
+.adminBubble {
+    max-width: 100%;
+    border-radius: 18px;
+    background: #3F51B5;
+    padding:1em;
+    border-bottom-right-radius: 2px;
+    overflow-wrap: break-word;
+    color: white;
+
+}
+
+.testing {
+    max-width: 100vw;
+    padding-left:.5em;
+    padding-right: .5em;
+    justify-content: flex-start;
+}
+
+.input_box{
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+}
+
+.full_width {
+    width: 100%;
+    padding-left: .5em;
+    margin-right: .5em;
+}
+
+.chat_box {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    border: 1px solid black;
+    height:40px;
+    z-index: 99999;
+    background: white;
+
+    display: grid;
+    grid-template-columns: 15% 85%;
+}
+
+.chats_messages { 
+    // overflow-y: auto;
+    overflow-y: scroll;
+    height: 90%;
+    padding-left:1em;
+    padding-right: 1em;
+    padding-bottom: 2.5em;
+    margin-top: 56px;
+}
+
+.border_left {
+    display: flex;
+
+    border-right: solid 1px black;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.right_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid black ;
+}
+
+.message_input_container {
+    display: flex;
+    align-items: center;
+    padding-left: .5em;
+}
+
+.text_input{
+    font-size: 1em;
+
+}
+
+.text_input:focus{
+   outline: none;
+}
