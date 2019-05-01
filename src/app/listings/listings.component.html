@@ -1,5 +1,5 @@
-<div fxLayout="row wrap" ngStyle.gt-sm='padding-left: 4em; padding-right: 4em; justify-content: space-between;'>
-  <mat-card fxFlex="400px" fxFlex.lt-sm="100%" *ngFor="let listing of listings | async" class="example-card">
+<!-- <div fxLayout="row wrap" fxLayoutGap="30px" ngStyle.gt-sm='padding-left: 4em; padding-right: 4em; justify-content: space-between;'>
+  <mat-card fxFlex="25%" fxFlex.lt-sm="100%" *ngFor="let listing of listings | async" class="example-card">
     <mat-card-title>{{ listing.streetAddress }}</mat-card-title>
     <mat-card-subtitle>{{ listing.cityZip }}</mat-card-subtitle>
     <img style="max-height: 333px" mat-card-image src='{{listing.image}}' alt="">
@@ -12,4 +12,12 @@
       <button  [routerLink]="['/listings', listing.id]" mat-raised-button color="primary">Read More</button>
     </mat-card-actions>
   </mat-card>
-</div>
+</div> -->
+
+<section class="listing_container">
+  <div class="card_container" fxLayout="row wrap" fxLayoutGap="1.5em" fxLayoutAlign="">
+    <mat-card *ngFor="let listing of listings | async"  fxFlex="30%" fxFlex.lt-sm="100" fxFlex.sm="100%">
+      <img mat-card-image src='{{listing.image}}'>	
+    </mat-card>
+  </div>
+</section>

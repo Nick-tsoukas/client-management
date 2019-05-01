@@ -1,3 +1,20 @@
 mat-card {
-  margin-top: 4em;
+  margin-bottom:1em;
+}
+
+
+
+//  large screen margin for toolbar
+.listing_container {
+  margin-top: 64px;
+  padding: 1em;
+  padding-left:10%;
+  padding-right: 5%;
+}
+// small screen margin for toolbar 
+@media only screen and (max-width: 600px){
+  .listing_container {
+    margin-top: 56px;
+    padding-top:.5em;
+  }
 }
