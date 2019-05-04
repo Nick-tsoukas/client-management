@@ -51,7 +51,7 @@
     background: white;
 
     display: grid;
-    grid-template-columns: 15% 85%;
+    grid-template-columns: 15% 70% 15%;
 }
 
 .chats_messages { 
@@ -63,6 +63,7 @@
     padding-bottom: 2.5em;
     margin-top: 56px;
 }
+
 
 .border_left {
     display: flex;
@@ -88,9 +89,10 @@
 
 .text_input{
     font-size: 1em;
+    border: none !important;
 
 }
 
 .text_input:focus{
-   outline: none;
+   outline: none !important;
 }

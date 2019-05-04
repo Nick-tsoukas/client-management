@@ -72,6 +72,8 @@
     <a *ngIf="!isAuth" routerLink="/login">Login</a>
     <a *ngIf="adminLink" routerLink="/admin">Dashboard</a>
     <a fxHide.sm *ngIf="isAuth && !adminLink" routerLink="/listings">Listings</a>
+    <a *ngIf="isAuth && !adminLink" routerLink="/chat">Chat</a>
+
     <a *ngIf="adminLink" routerLink="/admin/listing">Listings </a>
     <a *ngIf="adminLink" routerLink="/admin/createListing">Add Listing</a>
     <a *ngIf="isAuth" routerLink="/login" (click)="onLogout()">Log Out</a>

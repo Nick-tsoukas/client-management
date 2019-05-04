@@ -1,6 +1,6 @@
 
-
-<table mat-table [dataSource]="dataSet" >
+<!--  medium and desktop view -->
+<table fxHide.lt-sm mat-table [dataSource]="dataSet" >
 
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> Name </th>
@@ -34,3 +34,15 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
   
+<!-- mobile view  -->
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let user of dataSet">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+       <span><mat-icon style="padding-right: 1em;" color="accent">chat</mat-icon></span>  {{user.email}}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <span fxFlex="50%">{{user.name}}</span>
+    <span fxFlex="50%">{{user.phoneNumber}}</span>
+  </mat-expansion-panel>
+</mat-accordion>

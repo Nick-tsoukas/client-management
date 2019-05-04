@@ -11,31 +11,22 @@
             {{listing.description}}
           </p>
           <div fxLayout="row wrap">
-            <span style="margin-bottom:1em;" fxLayout="row" fxLayoutAlign="start center" fxFlex="33%">
-              <mat-icon class="card_icon">home</mat-icon> home
+            <span fxLayout="row" fxLayoutAlign="start center" fxFlex="33%">
+              <p> {{listing.squareFt}} Sq.ft</p>
             </span>
-            <span style="margin-bottom:1em;" fxLayout="row" fxLayoutAlign="start center" fxFlex="33%">
-              <mat-icon class="card_icon">home</mat-icon> home
+            <span fxLayout="row" fxLayoutAlign="start center" fxFlex="33%">
+                <mat-icon class="card_icon">map</mat-icon> map
             </span>
-            <span style="margin-bottom:1em;" fxLayout="row" fxLayoutAlign="start center" fxFlex="33%">
-              <mat-icon class="card_icon">home</mat-icon> home
+            <span  fxLayout="row" fxLayoutAlign="start center" fxFlex="33%">
+              <mat-icon class="card_icon">favorite</mat-icon> 
             </span>
-    
-            <span style="margin-bottom:1em;" fxLayout="row" fxLayoutAlign="start center" fxFlex="33%">
-              <mat-icon class="card_icon">home</mat-icon> home
-            </span>
-            <span style="margin-bottom:1em;" fxLayout="row" fxLayoutAlign="start center" fxFlex="33%">
-              <mat-icon class="card_icon">home</mat-icon> home
-            </span>
-            <span style="margin-bottom:1em;" fxLayout="row" fxLayoutAlign="start center" fxFlex="33%">
-              <mat-icon class="card_icon">home</mat-icon> home
-            </span>
-    
           </div>
         </mat-card-content>
         <mat-card-actions >
           <!-- <button class="margin_right_button blue_border" (click)="editListing(listing)" mat-stroked-button color="primary">Edit</button> -->
           <button class="blue_border" [routerLink]="['/listings', listing.id]" mat-stroked-button color="primary">Read More</button>
+          <button class="blue_border margin_left" [routerLink]="['/listings', listing.id]" mat-stroked-button color="primary">Send Message</button>
+
         </mat-card-actions>
     </mat-card>
   </div>

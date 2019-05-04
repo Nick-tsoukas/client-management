@@ -1,6 +1,6 @@
 <div class="card_container" fxLayout="row wrap" fxLayoutAlign="space-evenly">
   <mat-card mat-elevation-z24 class="hoverEffect" *ngFor="let listing of listings | async" fxFlex="30%"
-    fxFlex.lt-sm="100" fxFlex.sm="100%">
+    fxFlex.lt-sm="100" fxFlex.sm="45%">
     <img mat-card-image src='{{listing.image}}'>
     <mat-card-content>
       <span class="type">{{listing.type}} </span>

@@ -2,8 +2,6 @@ mat-card {
   margin-bottom:1em;
 }
 
-
-
 //  large screen margin for toolbar
 .listing_container {
   margin-top: 64px;
@@ -19,6 +17,10 @@ mat-card {
 
 .price {
   margin-bottom: 5px;
+}
+
+.margin_left{
+  margin-left: 1em;
 }
 // small screen margin for toolbar 
 @media only screen and (max-width: 600px){
