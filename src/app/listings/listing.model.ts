@@ -7,6 +7,7 @@ export interface Listing {
    cityZip: string;
    image: string;
    price: number;
+   description: string;
   }
 
 

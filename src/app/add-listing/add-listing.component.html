@@ -1,3 +1,44 @@
-<p>
-  add-listing works!
-</p>
+<section class="header_image">
+
+</section>
+
+<section class="form_content" fxLayout="row" fxLayoutAlign="center center;">
+  <mat-card class="desktop_card"
+    fxLayout="column">
+    <mat-card-header>
+      <mat-card-title>Add listing</mat-card-title>
+    </mat-card-header>
+    <form fxLayout="column" #f="ngForm" (ngSubmit)="this.listingService.addListing(f)">
+      <div fxLayout="row">
+        <mat-form-field fxFlex="50%" style="padding-left: 1em; padding-right: 1em;">
+          <input ngModel name="steetAddress" matInput placeholder="street address">
+        </mat-form-field>
+        <mat-form-field fxFlex="50%" style="padding-left: 1em; padding-right: 1em;">
+          <input ngModel name="cityZip" matInput placeholder="zip code">
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row">
+        <mat-form-field fxFlex="50%" style="padding-left: 1em; padding-right: 1em;">
+          <input ngModel name="type" matInput placeholder="building type">
+        </mat-form-field>
+        <mat-form-field fxFlex="50%" style="padding-left: 1em; padding-right: 1em;">
+          <input ngModel name="squareFt" matInput placeholder="square foot ">
+        </mat-form-field>
+        <mat-form-field fxFlex="50%" style="padding-left: 1em; padding-right: 1em;">
+            <input ngModel name="price" matInput placeholder="price ">
+          </mat-form-field>
+      </div>
+
+      <mat-form-field fxFlex="50%" style="padding-left: 1em; padding-right: 1em;">
+        <input ngModel name="image" matInput placeholder="image">
+      </mat-form-field>
+      <mat-form-field fxFlex="50%" style="padding-left: 1em; padding-right: 1em;">
+        <textarea ngModel name="description" matInput placeholder="Add description"></textarea>
+      </mat-form-field>
+      <mat-card-actions style="padding-left: 1em;">
+        <button class="blue_border" mat-stroked-button color="primary">Add Listing</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</section>

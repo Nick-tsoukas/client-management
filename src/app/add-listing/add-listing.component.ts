@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { AuthService } from '../auth/auth.service';
+import { ListingService } from '../listings/listing.service';
 
 @Component({
   selector: 'app-add-listing',
@@ -7,7 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddListingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private listingService: ListingService) {
+
+   }
 
   ngOnInit() {
   }

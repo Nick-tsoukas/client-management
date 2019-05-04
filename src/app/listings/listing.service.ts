@@ -14,6 +14,18 @@ export class ListingService implements OnInit {
    return  from(this.db.doc(`availableListings/${listingId}`).update(changes))
   }
 
+  addListing(formData){
+
+     this.db.collection('availableListings').add({
+      cityZip: formData.value['cityZip'],
+      description: formData.value['description'],
+      type: formData.value['type'],
+      price: formData.value['price'],
+      squareFt: formData.value['squareFt'],
+      image: formData.value['image'],
+    })
+  }
+
   getChats(id:string){
     return this.db.doc(`users/${id}`).snapshotChanges()
       .pipe(
