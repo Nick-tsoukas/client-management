@@ -36,11 +36,12 @@
   </table>
   
 <!-- mobile view  -->
-<mat-accordion>
+<mat-accordion fxHide.gt-sm >
   <mat-expansion-panel *ngFor="let user of dataSet">
     <mat-expansion-panel-header>
       <mat-panel-title>
-       <span><mat-icon style="padding-right: 1em;" color="accent">chat</mat-icon></span>  {{user.email}}
+        <a routerLink="/admin/chat/{{user.uid}}"> <span style="padding-right: 1em;"><mat-icon color="accent">chat</mat-icon></span></a>
+        {{user.email}}
       </mat-panel-title>
     </mat-expansion-panel-header>
     <span fxFlex="50%">{{user.name}}</span>

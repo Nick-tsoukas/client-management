@@ -7,7 +7,11 @@
     <mat-icon>people</mat-icon>
     <span class="nav_icon">Login</span>
   </a>
-  <a *ngIf="isAuth" mat-list-item routerLink="/listings" (click)="onClose()">
+  <a *ngIf="isAuth && !adminLink" mat-list-item routerLink="/listings" (click)="onClose()">
+    <mat-icon>home</mat-icon>
+    <span class="nav_icon">Listings</span>
+  </a>
+  <a *ngIf="isAuth && adminLink" mat-list-item routerLink="/admin/listing" (click)="onClose()">
     <mat-icon>home</mat-icon>
     <span class="nav_icon">Listings</span>
   </a>

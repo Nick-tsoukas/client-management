@@ -29,7 +29,7 @@
         <input id="messageInput" class="text_input" type="textarea" placeholder="Type a message..." (ngModel)="messageValue" name="message">
     </div>
   
-    <div fxFlex="15%" class="right_icon">
+    <div  class="right_icon">
       <button mat-icon-button type="submit">
         <mat-icon color="primary">send</mat-icon>
       </button>
@@ -38,21 +38,3 @@
     </form>
   
   </div>
-  
-<!-- <div  *ngFor="let chat of chats | async">
-  <p [ngStyle]="{'text-align': 'right', 'border-right' : '2px solid blue'}" *ngIf='chat.adminMessage; else userMessage'>Admin message {{chat.message}} </p>
-  <ng-template  #userMessage> 
-    <p [ngStyle]="{'border-left' : '2px solid red'}">User message: {{chat.message}}</p>
-  </ng-template>
-</div>
-
-<div style="margin-top:4em;">
-  <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="">
-    <mat-form-field class="">
-      <input matInput placeholder="Type Message" ngModel name="message">
-    </mat-form-field>
-    <button type="submit">send</button>
-  </form>
-</div> -->
-
-<!-- [ngStyle]="{'background-color':person.country === 'UK' ? 'green' : 'red' }" -->
