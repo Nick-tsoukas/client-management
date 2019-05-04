@@ -1,16 +1,6 @@
-
-  <!-- <mat-toolbar fxLayout="row" fxLayoutAlign="center center" style="background: white; color:#3f51b5">
-
-      <mat-icon class="center" fxFlex fxFlexAlign="center" routerLink="/admin/listing"> home</mat-icon>
-      <mat-icon class="center" fxFlex fxFlexAlign="center" routerLink="/admin/users"> people</mat-icon>
-      <mat-icon class="center" fxFlex fxFlexAlign="center" routerLink="/admin/add"> add</mat-icon>
-  
-  </mat-toolbar> -->
-
-
 <section fxLayout="row" class="dashboard_container">
 
-  <div class="side_bar" fxFlex="20%" fxHide.lt-sm>
+  <div mat-elevation-22 class="side_bar" fxFlex.gt-sm="20%" fxHide.lt-sm>
     <mat-list>
     <a routerLink="/admin/users">
       <mat-list-item>
@@ -24,7 +14,7 @@
        <span class="side_nav_label">Listings</span>
       </mat-list-item>
     </a>
-    <a routerLink="/admin/chat">
+    <a routerLink="/admin/createListing">
       <mat-list-item>
        <span> <mat-icon color="primary" class="icon_padding">add</mat-icon></span> 
        <span class="side_nav_label"> Add Listing </span>
@@ -33,8 +23,7 @@
     </mat-list>
   </div>
 
-  <div class="main_background main_container" fxFlex="100">
-
+  <div class="content_container" fxFlex="100">
     <router-outlet></router-outlet>
   </div>
 </section>

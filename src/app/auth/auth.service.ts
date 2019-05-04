@@ -32,7 +32,7 @@ export class AuthService {
                 this.authChange.next(true);
                 if (user.uid === 'jsfbs6IY3NTeKA1VmcGamSYtJSI3') {
                     this.isAdmin.next(true);
-                    this.router.navigate(['./admin']);
+                    this.router.navigate(['./admin/listing']);
 
                 }
                 else {

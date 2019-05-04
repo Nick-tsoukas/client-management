@@ -1,30 +1,29 @@
 <h2 mat-dialog-title>{{title}}</h2>
-
-
-<mat-dialog-content [formGroup]="form">
-
+<mat-dialog-content class="dialog" style="padding-left:1em; padding-right: 1em;" fxLayout="column" [formGroup]="form">
     <mat-form-field>
-
         <input matInput
                 placeholder="Address"
                formControlName="streetAddress">
-
     </mat-form-field>
     <mat-form-field>
-
         <input matInput
                 placeholder="city and zip code"
                formControlName="cityZip">
 
     </mat-form-field>
-
     <mat-form-field>
-
         <input matInput placeholder="Price"
             formControlName="price">
-
     </mat-form-field>
+    <mat-form-field>
+            <input matInput placeholder="square foot"
+                formControlName="squareFt">
+        </mat-form-field>
 
+        <mat-form-field>
+                <input matInput placeholder="building Type"
+                    formControlName="type">
+            </mat-form-field>
 
 </mat-dialog-content>
 

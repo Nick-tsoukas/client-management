@@ -36,7 +36,9 @@ export class ListDialogComponent implements OnInit {
       this.form = fb.group({
           streetAddress: [listing.streetAddress, Validators.required],
           cityZip: [listing.cityZip,Validators.required],
-          price: [listing.price]
+          price: [listing.price],
+          type: [listing.type],
+          squareFt: [listing.squareFt]
       });
 
   }
@@ -49,7 +51,7 @@ export class ListDialogComponent implements OnInit {
   save() {
     const changes  = this.form.value;
 
-    this.listingService.saveListing(this.listing.id, { cityZip: changes.cityZip, streetAddress: changes.streetAddress, price: changes.price })
+    this.listingService.saveListing(this.listing.id, { cityZip: changes.cityZip, streetAddress: changes.streetAddress, price: changes.price, type: changes.type, squareFt: changes.squareFt })
       .subscribe(
         () => this.dialogRef.close(this.form.value)
       )

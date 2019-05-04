@@ -1,7 +1,7 @@
 <mat-toolbar class="mobile_toolbar_user" color="primary">
 
- <!-- ============== Nav For Mobile  -->
-  <div  fxHide.gt-xs *ngIf="!adminLink && isAuth" fxLayout fxLayoutAlign="center center" style="width: 100%;">
+  <!-- ============== Nav For Mobile  -->
+  <div fxHide.gt-xs *ngIf="!adminLink && isAuth" fxLayout fxLayoutAlign="center center" style="width: 100%;">
     <!-- four flex items in flex container -->
     <div fxFlex="auto" fxLayout='column' fxLayoutAlign="center center ">
       <a fxLayoutAlign="center center" fxLayout='column' routerLink="/listings">
@@ -18,11 +18,11 @@
     </div>
 
     <div fxFlex="auto" fxLayout='column' fxLayoutAlign="center center ">
-        <a fxLayoutAlign="center center" fxLayout='column' routerLink="/chat">
-          <mat-icon aria-label="Menu">favorite</mat-icon>
-          <span class="icon_label">Favorite</span>
-        </a>
-      </div>
+      <a fxLayoutAlign="center center" fxLayout='column' routerLink="/chat">
+        <mat-icon aria-label="Menu">favorite</mat-icon>
+        <span class="icon_label">Favorite</span>
+      </a>
+    </div>
 
     <div fxFlex="auto" fxLayout='column' fxLayoutAlign="center center ">
       <mat-icon aria-label="Menu" (click)="onToggleSidenav()">menu</mat-icon>
@@ -30,52 +30,50 @@
     </div>
 
   </div>
-<!-- admin mobile nav bar  -->
-  <div  fxHide.gt-xs *ngIf="adminLink && isAuth" fxLayout fxLayoutAlign="center center" style="width: 100%;">
-      <!-- four flex items in flex container -->
-      <div fxFlex="auto" fxLayout='column' fxLayoutAlign="center center ">
-        <a fxLayoutAlign="center center" fxLayout='column' routerLink="admin/listing">
-          <mat-icon aria-label="Menu">home</mat-icon>
-          <span class="icon_label">Listings</span>
-        </a>
-      </div>
-  
-      <div fxFlex="auto" fxLayout='column' fxLayoutAlign="center center ">
-        <a fxLayoutAlign="center center" fxLayout='column' routerLink="/admin/users">
-          <mat-icon aria-label="Menu">chat</mat-icon>
-          <span class="icon_label">Chat</span>
-        </a>
-      </div>
-  
-      <div fxFlex="auto" fxLayout='column' fxLayoutAlign="center center ">
-          <a fxLayoutAlign="center center" fxLayout='column' routerLink="/chat">
-            <mat-icon aria-label="Menu">favorite</mat-icon>
-            <span class="icon_label">Favorite</span>
-          </a>
-        </div>
-  
-      <div fxFlex="auto" fxLayout='column' fxLayoutAlign="center center ">
-        <mat-icon aria-label="Menu" (click)="onToggleSidenav()">menu</mat-icon>
-        <span class="icon_label">More</span>
-      </div>
-  
+  <!-- admin mobile nav bar  -->
+  <div fxHide.gt-xs *ngIf="adminLink && isAuth" fxLayout fxLayoutAlign="center center" style="width: 100%;">
+    <!-- four flex items in flex container -->
+    <div fxFlex="auto" fxLayout='column' fxLayoutAlign="center center ">
+      <a fxLayoutAlign="center center" fxLayout='column' routerLink="admin/listing">
+        <mat-icon aria-label="Menu">home</mat-icon>
+        <span class="icon_label">Listings</span>
+      </a>
     </div>
 
-  <!-- <div *ngIf="adminLink">
-    <mat-icon aria-label="Menu" (click)="onToggleSidenav()">menu</mat-icon>
-  </div> -->
+    <div fxFlex="auto" fxLayout='column' fxLayoutAlign="center center ">
+      <a fxLayoutAlign="center center" fxLayout='column' routerLink="/admin/users">
+        <mat-icon aria-label="Menu">chat</mat-icon>
+        <span class="icon_label">Chat</span>
+      </a>
+    </div>
+
+    <div fxFlex="auto" fxLayout='column' fxLayoutAlign="center center ">
+      <a fxLayoutAlign="center center" fxLayout='column' routerLink="/chat">
+        <mat-icon aria-label="Menu">favorite</mat-icon>
+        <span class="icon_label">Favorite</span>
+      </a>
+    </div>
+
+    <div fxFlex="auto" fxLayout='column' fxLayoutAlign="center center ">
+      <mat-icon aria-label="Menu" (click)="onToggleSidenav()">menu</mat-icon>
+      <span class="icon_label">More</span>
+    </div>
+
+  </div>
 
   <!--  End of mobile Nav  -->
 
   <!-- Nav for desktop  -->
 
   <div class="navPadding" fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+    <mat-icon style="position: absolute; top: 20px; left: 15px;" aria-label="Menu" (click)="onToggleSidenav()">menu
+    </mat-icon>
     <a *ngIf="!isAuth" routerLink="/signup">Sign Up</a>
     <a *ngIf="!isAuth" routerLink="/login">Login</a>
     <a *ngIf="adminLink" routerLink="/admin">Dashboard</a>
     <a fxHide.sm *ngIf="isAuth && !adminLink" routerLink="/listings">Listings</a>
     <a *ngIf="adminLink" routerLink="/admin/listing">Listings </a>
-    <a *ngIf="adminLink" routerLink="/listings">Add Listing</a>
+    <a *ngIf="adminLink" routerLink="/admin/createListing">Add Listing</a>
     <a *ngIf="isAuth" routerLink="/login" (click)="onLogout()">Log Out</a>
   </div>
 

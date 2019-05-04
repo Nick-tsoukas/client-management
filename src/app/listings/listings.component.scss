@@ -11,6 +11,19 @@ mat-card {
   padding-left:10%;
   padding-right: 5%;
 }
+
+.margin_right_button {
+  margin-right: .5em;
+  
+}
+
+.blue_border {
+  border: 1px solid blue;
+}
+
+.price {
+  margin-bottom: 5px;
+}
 // small screen margin for toolbar 
 @media only screen and (max-width: 600px){
   .listing_container {

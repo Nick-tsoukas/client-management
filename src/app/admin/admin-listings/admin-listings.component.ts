@@ -7,6 +7,15 @@ import { MatDialog, MatDialogConfig } from "@angular/material";
 import { ListDialogComponent } from "../../list-dialog/list-dialog.component";
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AuthService } from '../../auth/auth.service';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from '@angular/animations';
+
+
 
 @Component({
   selector: 'app-admin-listings',
@@ -18,6 +27,12 @@ export class AdminListingComponent implements OnInit {
   adminLink: boolean;
   listings: Observable<Listing[]>;
   list: Observable<Listing>;
+  hover: boolean = false;
+  myClass : string = 'red';
+  
+  changeStyle($event){
+   
+  }
 
   constructor(private listeningService: ListingService, private dialog: MatDialog, private afAuth: AngularFireAuth,private auth: AuthService) {
     // Get All Listings  from the listening service and store in listing member ... 

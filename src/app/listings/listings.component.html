@@ -1,23 +1,42 @@
-<!-- <div fxLayout="row wrap" fxLayoutGap="30px" ngStyle.gt-sm='padding-left: 4em; padding-right: 4em; justify-content: space-between;'>
-  <mat-card fxFlex="25%" fxFlex.lt-sm="100%" *ngFor="let listing of listings | async" class="example-card">
-    <mat-card-title>{{ listing.streetAddress }}</mat-card-title>
-    <mat-card-subtitle>{{ listing.cityZip }}</mat-card-subtitle>
-    <img style="max-height: 333px" mat-card-image src='{{listing.image}}' alt="">
-    <mat-card-content>
-      <p>
-        {{listing.price | currency}}
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button  [routerLink]="['/listings', listing.id]" mat-raised-button color="primary">Read More</button>
-    </mat-card-actions>
-  </mat-card>
-</div> -->
 
 <section class="listing_container">
   <div class="card_container" fxLayout="row wrap" fxLayoutGap="1.5em" fxLayoutAlign="">
     <mat-card *ngFor="let listing of listings | async"  fxFlex="30%" fxFlex.lt-sm="100" fxFlex.sm="100%">
-      <img mat-card-image src='{{listing.image}}'>	
+        <img mat-card-image src='{{listing.image}}'>
+        <mat-card-content>
+          <span class="type">Retail </span>
+          <h3 class="price">{{listing.price | currency}}</h3>
+          <span class="address"> {{listing.streetAddress}} {{listing.cityZip}}</span>
+          <p style="color: #9AA0AA">
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+          </p>
+          <div fxLayout="row wrap">
+            <span style="margin-bottom:1em;" fxLayout="row" fxLayoutAlign="start center" fxFlex="33%">
+              <mat-icon class="card_icon">home</mat-icon> home
+            </span>
+            <span style="margin-bottom:1em;" fxLayout="row" fxLayoutAlign="start center" fxFlex="33%">
+              <mat-icon class="card_icon">home</mat-icon> home
+            </span>
+            <span style="margin-bottom:1em;" fxLayout="row" fxLayoutAlign="start center" fxFlex="33%">
+              <mat-icon class="card_icon">home</mat-icon> home
+            </span>
+    
+            <span style="margin-bottom:1em;" fxLayout="row" fxLayoutAlign="start center" fxFlex="33%">
+              <mat-icon class="card_icon">home</mat-icon> home
+            </span>
+            <span style="margin-bottom:1em;" fxLayout="row" fxLayoutAlign="start center" fxFlex="33%">
+              <mat-icon class="card_icon">home</mat-icon> home
+            </span>
+            <span style="margin-bottom:1em;" fxLayout="row" fxLayoutAlign="start center" fxFlex="33%">
+              <mat-icon class="card_icon">home</mat-icon> home
+            </span>
+    
+          </div>
+        </mat-card-content>
+        <mat-card-actions >
+          <!-- <button class="margin_right_button blue_border" (click)="editListing(listing)" mat-stroked-button color="primary">Edit</button> -->
+          <button class="blue_border" [routerLink]="['/listings', listing.id]" mat-stroked-button color="primary">Read More</button>
+        </mat-card-actions>
     </mat-card>
   </div>
 </section>

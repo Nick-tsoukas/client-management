@@ -28,6 +28,7 @@ import { AdminListingComponent } from './admin/admin-listings/admin-listings.com
 import { UserListComponent } from './admin/user-list/user-list.component';
 import { ChatServiceService  } from './chat/chat-service.service';
 import { UserChatComponent } from './user-chat/user-chat.component';
+import { AddListingComponent } from './add-listing/add-listing.component';
 
 
 
@@ -48,6 +49,7 @@ import { UserChatComponent } from './user-chat/user-chat.component';
     AdminListingComponent,
     UserListComponent,
     UserChatComponent,
+    AddListingComponent,
   ],
   imports: [
     BrowserModule,

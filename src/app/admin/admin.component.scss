@@ -14,14 +14,12 @@
     padding-right: 1em;
 }
 
-.main_container {
-
-}
-
-
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
     .side_nav_label {
      display: none;
+    }
+    .side_bar {
+        max-width:50px;
     }
   }
   
@@ -30,16 +28,22 @@
     color:inherit;
 }
 
-
 .center {
     text-align: center;
 
 }
-
 .center:focus {
   outline: 0  !important;
 }
 
 .center:active {
     color: red;
+}
+
+
+// main content 
+
+.content_container {
+    margin-top: 64px;
+    overflow: scroll;
 }

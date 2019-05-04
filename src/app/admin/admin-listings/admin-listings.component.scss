@@ -1,3 +1,28 @@
+.card_container {
+    padding-top: 1em;
+}
+
+
+
 mat-card {
-    margin-top: 4em;
+    transition-property: all;
+    transition-duration: .5s;
+    margin-bottom: 2em;
+}
+
+.margin_right_button {
+    margin-right: .5em;
+    
+}
+
+.blue_border {
+    border: 1px solid blue;
+}
+
+.price {
+    margin-bottom: 5px;
+}
+
+.hoverEffect:hover {
+    transform: translateY(-10px)
 }

@@ -12,6 +12,7 @@ import { AdminListingComponent } from './admin/admin-listings/admin-listings.com
 import { UserListComponent } from './admin/user-list/user-list.component';
 import { ChatResolver } from './chat.resolver';
 import { UserChatComponent } from './user-chat/user-chat.component';
+import { AddListingComponent  } from '../app/add-listing/add-listing.component';
 
 
 
@@ -27,7 +28,8 @@ const routes: Routes = [
       chat: ChatResolver
   }},
     { path: 'listing', component: AdminListingComponent, canActivate:[AuthGuard] },
-    { path: 'users', component: UserListComponent, canActivate:[AuthGuard] }
+    { path: 'createListing', component: AddListingComponent, canActivate:[AuthGuard] },
+    { path: 'users', component: UserListComponent, canActivate:[AuthGuard] },
   ]},
   {
     path: 'listings/:listId',
