@@ -1,6 +1,6 @@
  # Client Management 
  
- This app was built in effort to learn angular development. 
+ This app was built in effort to learn angular development. It is still in development, but wanted to explore how to host the app in production. 
 
 
  link to app  
