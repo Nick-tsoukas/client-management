@@ -13,6 +13,7 @@ export class UserChatComponent implements OnInit {
   ids: any;
   ar: string[];
   testing : number ;
+  messageValue;
 
   onSubmit(formData) {
     this.chatService.userAddMessage(this.userId,formData.value.message);

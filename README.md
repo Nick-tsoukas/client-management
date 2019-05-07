@@ -1,10 +1,18 @@
-#Next step 2 
+ # Client Management 
+ 
+ This app was built in effort to learn angular development. 
+
+
+ link to app  
+ https://client-management-111c5.firebaseapp.com/
+ 
+ # Dev Notes 
 - Build attractive card for displaying the list component data 
 - Start creating CRUD methods for admin  ... data manipulation 
 - Start learning reactive and template forms in Angular .... 
 - Clean up data on listing cards and add more info 
 
-#Next step 2 optional
+
 Think about using this code below in this app and other apps 
 - this function can be used as a utility function to convert the snapshots for you 
 - Good practice so not to repeat your self 
@@ -62,31 +70,3 @@ will not use this code in app ...
 
   }
 ```
-
-# ClientManagement
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

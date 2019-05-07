@@ -10,7 +10,7 @@ import { ListingService } from '../listings/listing.service';
 })
 export class AddListingComponent implements OnInit {
 
-  constructor(private listingService: ListingService) {
+  constructor(public listingService: ListingService) {
 
    }
 

@@ -18,6 +18,7 @@ export class ChatComponent implements OnInit {
   chats: Observable<any>;
   ids: any;
   ar: string[];
+  messageValue ;
 
   deleteAll(){
     this.ar.forEach((val) => {
