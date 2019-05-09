@@ -1,5 +1,32 @@
+@import '../../../mixins.scss';
+
+
+
 .card_container {
-    padding-top: 1em;
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 22%));
+
+  @include lg-tablet{
+    grid-template-columns: repeat(auto-fill, minmax(200px, 30%));
+  }
+  @include tablet {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 45%));
+    grid-column-gap:10px;
+  }
+  @include phone {
+    grid-template-columns: 1fr;
+    padding-left:.5em;
+    padding-right: .5em;
+
+  }
+  @include xl-desktop {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 18%));
+    grid-column-gap:10px;
+  }
+  grid-column-gap:1em;
+  grid-row-gap: 1em;
+  justify-content: space-around;
+  padding-top: 1em;
 }
 
 
@@ -7,12 +34,15 @@
 mat-card {
     transition-property: all;
     transition-duration: .5s;
-    margin-bottom: 2em;
+    img {
+      max-height: 400px;
+    }
+    // margin-bottom: 2em;
 }
 
 .margin_right_button {
     margin-right: .5em;
-    
+
 }
 
 .blue_border {
