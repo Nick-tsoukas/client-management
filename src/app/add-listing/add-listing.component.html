@@ -1,6 +1,4 @@
-<section class="header_image">
-
-</section>
+<section class="header_image"></section>
 
 <section class="form_content" fxLayout="row" fxLayoutAlign="center center;">
   <mat-card class="desktop_card"
@@ -8,6 +6,7 @@
     <mat-card-header>
       <mat-card-title>Add listing</mat-card-title>
     </mat-card-header>
+    <!-- Listing service will add to listing db on submit -->
     <form fxLayout="column" #f="ngForm" (ngSubmit)="this.listingService.addListing(f)">
       <div fxLayout="row">
         <mat-form-field fxFlex="50%" style="padding-left: 1em; padding-right: 1em;">
@@ -30,12 +29,15 @@
           </mat-form-field>
       </div>
 
-      <mat-form-field fxFlex="50%" style="padding-left: 1em; padding-right: 1em;">
+      <!-- <mat-form-field fxFlex="50%" style="padding-left: 1em; padding-right: 1em;">
         <input ngModel name="image" matInput placeholder="image">
-      </mat-form-field>
+      </mat-form-field> -->
       <mat-form-field fxFlex="50%" style="padding-left: 1em; padding-right: 1em;">
         <textarea ngModel name="description" matInput placeholder="Add description"></textarea>
       </mat-form-field>
+      <h1>Add Image</h1>
+      <input required type="file" (change)="this.listingService.uploadImage($event)">
+
       <mat-card-actions style="padding-left: 1em;">
         <button class="blue_border" mat-stroked-button color="primary">Add Listing</button>
       </mat-card-actions>

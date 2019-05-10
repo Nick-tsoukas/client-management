@@ -20,10 +20,8 @@
           </div>
         </mat-card-content>
         <mat-card-actions >
-          <!-- <button class="margin_right_button blue_border" (click)="editListing(listing)" mat-stroked-button color="primary">Edit</button> -->
           <button class="blue_border" [routerLink]="['/listings', listing.id]" mat-stroked-button color="primary">Read More</button>
           <button class="blue_border margin_left" [routerLink]="['/listings', listing.id]" mat-stroked-button color="primary">Send Message</button>
-
         </mat-card-actions>
     </mat-card>
   </div>

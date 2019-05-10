@@ -1,14 +1,34 @@
 import { Listing } from './listing.model';
 import { Injectable, OnInit } from '@angular/core';
-import { map, filter, first } from 'rxjs/operators';
-import { Observable, from } from 'rxjs';
+import { map, filter, first, takeLast,last, concatMap } from 'rxjs/operators';
+import { Observable, from, concat } from 'rxjs';
+import { AngularFireStorage } from '@angular/fire/storage';
+
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 
 @Injectable()
 export class ListingService implements OnInit {
+  imageUrl: string;
 
-  constructor(private db: AngularFirestore) { }
+  constructor(private db: AngularFirestore, private storage: AngularFireStorage) { }
   ngOnInit() { }
+
+  uploadImage(event){
+    const file = event.target.files[0];
+    const filePath = `listingImage`;
+    const task = this.storage.upload(filePath, file);
+    task.snapshotChanges()
+    .pipe(
+      last(),
+      concatMap(() => this.storage.ref(filePath).getDownloadURL())
+      )
+      .subscribe(val => {
+        this.imageUrl = val;
+      })
+
+
+    console.log(event.target.files)
+  }
 
   saveListing(listingId:string, changes: Partial<Listing>):Observable<any>{
    return  from(this.db.doc(`availableListings/${listingId}`).update(changes))
@@ -22,7 +42,7 @@ export class ListingService implements OnInit {
       type: formData.value['type'],
       price: formData.value['price'],
       squareFt: formData.value['squareFt'],
-      image: formData.value['image'],
+      image: this.imageUrl,
     })
   }
 

@@ -2,11 +2,9 @@ import { Component, OnInit, Input} from '@angular/core';
 import { Listing } from './listing.model';
 import { ListingService } from './listing.service';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable, Subscription } from 'rxjs';
+import { Observable } from 'rxjs';
 import { MatDialog, MatDialogConfig } from "@angular/material";
 import { ListDialogComponent } from "../list-dialog/list-dialog.component";
-import { AngularFireAuth } from '@angular/fire/auth';
-import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-listings',
@@ -16,29 +14,23 @@ import { AuthService } from '../auth/auth.service';
 })
 
 export class ListingsComponent implements OnInit {
-  show: Subscription;
-  adminLink: boolean;
   listings: Observable<Listing[]>;
   list: Observable<Listing>;
 
-  constructor(private listeningService: ListingService, private dialog: MatDialog, private afAuth: AngularFireAuth,private auth: AuthService) {
-    // Get All Listings  from the listening service and store in listing member ... 
+  constructor(private listeningService: ListingService, private dialog: MatDialog) {
     this.listings = this.listeningService.getAll();
-
   }
 
   ngOnInit() {
 
-    
+
   }
 
   editListing(listing: Listing) {
 
     const dialogConfig = new MatDialogConfig();
-
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-
     dialogConfig.data = listing;
 
     this.dialog.open(ListDialogComponent, dialogConfig);
