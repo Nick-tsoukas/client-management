@@ -10,31 +10,31 @@
           <p class="adminBubble">{{chat.message}}</p>
         </div>
       </ng-template>
-  
+
     </div>
-    
+
   </div>
-  
-      
-  
+
+
+
   <div class="chat_box">
-  
+
     <div class="border_left">
-      <mat-icon (click)="deleteAll()">add</mat-icon>
+      <mat-icon   matTooltip="Delete All Messages" (click)="deleteAll()">delete</mat-icon>
     </div>
-  
+
     <form fxLayout="row" (ngSubmit)="onSubmit(f)" #f="ngForm" class="message_form">
-  
+
     <div fxFlex="85%"  class="message_input_container">
         <input id="messageInput" class="text_input" type="textarea" placeholder="Type a message..." (ngModel)="messageValue" name="message">
     </div>
-  
+
     <div  class="right_icon">
       <button mat-icon-button type="submit">
         <mat-icon color="primary">send</mat-icon>
       </button>
     </div>
-  
+
     </form>
-  
+
   </div>

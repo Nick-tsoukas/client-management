@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { MatButtonModule, MatFormFieldModule, MatInputModule, MatCheckboxModule  } from '@angular/material';
+import { MatButtonModule, MatFormFieldModule, MatInputModule, MatCheckboxModule } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -13,6 +13,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTableModule} from '@angular/material/table';
+import {MatTooltipModule} from '@angular/material/tooltip';
+
 
 
 
@@ -36,7 +38,8 @@ import {MatTableModule} from '@angular/material/table';
         MatGridListModule,
         MatDialogModule,
         MatExpansionModule,
-        MatTableModule
+        MatTableModule,
+        MatTooltipModule
     ],
     exports: [
         MatButtonModule,
@@ -55,7 +58,8 @@ import {MatTableModule} from '@angular/material/table';
         MatGridListModule,
         MatDialogModule,
         MatExpansionModule,
-        MatTableModule
+        MatTableModule,
+        MatTooltipModule
     ]
 })
 export class MaterialModule {

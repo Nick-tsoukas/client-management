@@ -1,7 +1,7 @@
 import { Listing } from './listing.model';
 import { Injectable, OnInit } from '@angular/core';
-import { map, filter, first, takeLast,last, concatMap } from 'rxjs/operators';
-import { Observable, from, concat } from 'rxjs';
+import { map, first,last,concatMap } from 'rxjs/operators';
+import { Observable, from } from 'rxjs';
 import { AngularFireStorage } from '@angular/fire/storage';
 
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
@@ -25,9 +25,6 @@ export class ListingService implements OnInit {
       .subscribe(val => {
         this.imageUrl = val;
       })
-
-
-    console.log(event.target.files)
   }
 
   saveListing(listingId:string, changes: Partial<Listing>):Observable<any>{
