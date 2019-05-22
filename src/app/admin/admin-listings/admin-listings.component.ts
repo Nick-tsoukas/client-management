@@ -29,20 +29,20 @@ export class AdminListingComponent implements OnInit {
   list: Observable<Listing>;
   hover: boolean = false;
   myClass : string = 'red';
-  
+
   changeStyle($event){
-   
+
   }
 
   constructor(private listeningService: ListingService, private dialog: MatDialog, private afAuth: AngularFireAuth,private auth: AuthService) {
-    // Get All Listings  from the listening service and store in listing member ... 
+    // Get All Listings  from the listening service and store in listing member ...
     this.listings = this.listeningService.getAll();
 
   }
 
   ngOnInit() {
 
-    
+
   }
 
   editListing(listing: Listing) {

@@ -18,6 +18,7 @@ export class AddListingComponent implements OnInit {
   constructor(public listingService: ListingService, private storage: AngularFireStorage) {}
 
   ngOnInit() {
+
   }
 
 }
