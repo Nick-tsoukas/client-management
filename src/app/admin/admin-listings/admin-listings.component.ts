@@ -7,6 +7,17 @@ import { MatDialog, MatDialogConfig } from "@angular/material";
 import { ListDialogComponent } from "../../list-dialog/list-dialog.component";
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AuthService } from '../../auth/auth.service';
+import { faBed } from '@fortawesome/pro-light-svg-icons';
+import { faRulerCombined } from '@fortawesome/pro-light-svg-icons';
+import { faMoneyBillWave } from '@fortawesome/pro-light-svg-icons';
+
+
+
+
+
+
+
+
 import {
   trigger,
   state,
@@ -29,6 +40,11 @@ export class AdminListingComponent implements OnInit {
   list: Observable<Listing>;
   hover: boolean = false;
   myClass : string = 'red';
+
+  faBed = faBed;
+  faRulerCombined = faRulerCombined;
+  faMoneyBillWave = faMoneyBillWave;
+
 
   changeStyle($event){
 

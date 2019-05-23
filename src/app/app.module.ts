@@ -9,6 +9,14 @@ import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 
+// Font Awesome package ===============
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+
+
+
+
 // AngularFire Modules =====
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -39,7 +47,8 @@ import { UserListComponent } from './admin/user-list/user-list.component';
 import { UserChatComponent } from './user-chat/user-chat.component';
 import { AddListingComponent } from './add-listing/add-listing.component';
 
-
+// testing font awesome 
+library.add(faCoffee);
 
 
 
@@ -70,9 +79,10 @@ import { AddListingComponent } from './add-listing/add-listing.component';
     MaterialModule,
     FlexLayoutModule,
     FormsModule,
+    FontAwesomeModule,
     ReactiveFormsModule,
     AvatarModule.forRoot(),
-    AngularFireAuthModule
+    AngularFireAuthModule,
   ],
   providers: [
     AuthService,

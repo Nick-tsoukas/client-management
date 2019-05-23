@@ -9,6 +9,18 @@
   }
 }
 
+.position_rel {
+  position: relative;
+}
+
+.bottom_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  span {
+    padding-left: 1em;
+  }
+
+}
 .card_container {
   display:grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 22%));

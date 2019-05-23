@@ -1,34 +1,38 @@
 <div class="card_container">
 
-  <mat-card mat-elevation-z24 class="hoverEffect" *ngFor="let listing of listings | async">
+  <mat-card class="position_rel" mat-elevation-z24 class="hoverEffect" *ngFor="let listing of listings | async">
     <!-- Card Image  -->
     <div class="image_container">
       <img mat-card-image src="{{ listing.image }}" />
-      <button color="primary" class="floating_edit_button" mat-mini-fab>
-        <mat-icon aria-label="Example icon-button with a heart icon">edit</mat-icon>
+      <button (click)="editListing(this.listing)" color="primary" class="floating_edit_button" mat-mini-fab>
+        <mat-icon aria-label="Edit Listing Button">edit</mat-icon>
       </button>
     </div>
 
-
     <!-- Main card Content  -->
-
     <mat-card-content>
       <span class="type">{{ listing.type }} </span>
       <h3 class="price">{{ listing.price | currency }}</h3>
-      <span class="address">
-        {{ listing.streetAddress }} {{ listing.cityZip }}</span>
+      <span class="address"> {{ listing.streetAddress }} {{ listing.cityZip }}</span>
       <p style="color: #9AA0AA">{{ listing.description }}</p>
 
+      <section class="bottom_grid">
+        <div>
+          <fa-icon [icon]='faRulerCombined'></fa-icon>
+          <span>1111 SF</span>
+        </div>
+        <div>
+          <fa-icon [icon]='faMoneyBillWave'></fa-icon>
+          <span>$1111/Mo</span>
+        </div>
+
+      </section>
     </mat-card-content>
-
     <!-- Buttons  in the bottom of the card  -->
-      <mat-card-actions style="padding-top: 0;">
-        <button class="blue_border" [routerLink]="['/listings', listing.id]" mat-stroked-button color="primary">
-          Read More
-        </button>
-      </mat-card-actions>
-
-
+    <mat-card-actions class="right_align" style="padding-top: 0;">
+      <button class="blue_border" [routerLink]="['/listings', listing.id]" mat-stroked-button color="primary">
+        Read More
+      </button>
+    </mat-card-actions>
   </mat-card>
-  <!-- ====================== End of card -->
 </div>
