@@ -10,21 +10,8 @@ import { AuthService } from '../../auth/auth.service';
 import { faBed } from '@fortawesome/pro-light-svg-icons';
 import { faRulerCombined } from '@fortawesome/pro-light-svg-icons';
 import { faMoneyBillWave } from '@fortawesome/pro-light-svg-icons';
+import { faMapMarker } from  '@fortawesome/pro-light-svg-icons';
 
-
-
-
-
-
-
-
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition
-} from '@angular/animations';
 
 
 
@@ -44,6 +31,7 @@ export class AdminListingComponent implements OnInit {
   faBed = faBed;
   faRulerCombined = faRulerCombined;
   faMoneyBillWave = faMoneyBillWave;
+  faMapMarker = faMapMarker;
 
 
   changeStyle($event){

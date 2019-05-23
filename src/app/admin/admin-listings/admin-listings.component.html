@@ -11,22 +11,25 @@
 
     <!-- Main card Content  -->
     <mat-card-content>
-      <span class="type">{{ listing.type }} </span>
       <h3 class="price">{{ listing.price | currency }}</h3>
-      <span class="address"> {{ listing.streetAddress }} {{ listing.cityZip }}</span>
-      <p style="color: #9AA0AA">{{ listing.description }}</p>
-
+      <!-- <span class="type">{{ listing.type }} </span> -->
+      <!-- <p> {{listing.type }}</p> -->
       <section class="bottom_grid">
-        <div>
-          <fa-icon [icon]='faRulerCombined'></fa-icon>
-          <span>1111 SF</span>
-        </div>
-        <div>
-          <fa-icon [icon]='faMoneyBillWave'></fa-icon>
-          <span>$1111/Mo</span>
-        </div>
+          <div>
+            <fa-icon [icon]='faRulerCombined'></fa-icon>
+            <span>1111 SF</span>
+          </div>
+          <div>
+            <fa-icon [icon]='faMoneyBillWave'></fa-icon>
+            <span>$1111/Mo</span>
+          </div>
+        </section>
+  
+      <p class="address">
+          <fa-icon style="padding-right:.1em;" [icon]='faMapMarker'></fa-icon> {{ listing.streetAddress }} <br>
+         {{ listing.cityZip }}
+        </p>
 
-      </section>
     </mat-card-content>
     <!-- Buttons  in the bottom of the card  -->
     <mat-card-actions class="right_align" style="padding-top: 0;">

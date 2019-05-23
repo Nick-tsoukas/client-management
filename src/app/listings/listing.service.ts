@@ -36,9 +36,6 @@ export class ListingService implements OnInit {
     return from(this.db.doc(`availableListings/${listingId}`).delete())
   }
 
-  speak(){
-    console.log('hello')
-  }
 
   addListing(formData) {
     //setting the id to route to listing after creation 
