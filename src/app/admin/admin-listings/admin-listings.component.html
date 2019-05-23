@@ -1,62 +1,34 @@
+<div class="card_container">
+
+  <mat-card mat-elevation-z24 class="hoverEffect" *ngFor="let listing of listings | async">
+    <!-- Card Image  -->
+    <div class="image_container">
+      <img mat-card-image src="{{ listing.image }}" />
+      <button color="primary" class="floating_edit_button" mat-mini-fab>
+        <mat-icon aria-label="Example icon-button with a heart icon">edit</mat-icon>
+      </button>
+    </div>
 
 
-<!-- This is the container for the cards ... let's try and use grid for the layout -->
+    <!-- Main card Content  -->
 
- <div class="card_container">
-        <mat-card
-          mat-elevation-z24
-          class="hoverEffect"
-          *ngFor="let listing of listings | async"
-        >
-          <!-- Card Image  -->
+    <mat-card-content>
+      <span class="type">{{ listing.type }} </span>
+      <h3 class="price">{{ listing.price | currency }}</h3>
+      <span class="address">
+        {{ listing.streetAddress }} {{ listing.cityZip }}</span>
+      <p style="color: #9AA0AA">{{ listing.description }}</p>
 
-          <img mat-card-image src="{{ listing.image }}" />
+    </mat-card-content>
 
-          <!-- Main card Content  -->
+    <!-- Buttons  in the bottom of the card  -->
+      <mat-card-actions style="padding-top: 0;">
+        <button class="blue_border" [routerLink]="['/listings', listing.id]" mat-stroked-button color="primary">
+          Read More
+        </button>
+      </mat-card-actions>
 
-          <mat-card-content>
-            <span class="type">{{ listing.type }} </span>
-            <h3 class="price">{{ listing.price | currency }}</h3>
-            <span class="address">
-              {{ listing.streetAddress }} {{ listing.cityZip }}</span
-            >
-            <p style="color: #9AA0AA">{{ listing.description }}</p>
 
-            <!-- This is where the icons come into play  -->
-
-            <div fxLayout="row wrap">
-              <span fxLayout="row" fxLayoutAlign="start center" fxFlex="33%">
-                <p>{{ listing.squareFt }} Sq.ft</p>
-              </span>
-              <span fxLayout="row" fxLayoutAlign="start center" fxFlex="33%">
-                <mat-icon class="card_icon">map</mat-icon> map
-              </span>
-              <span fxLayout="row" fxLayoutAlign="start center" fxFlex="33%">
-                <mat-icon class="card_icon">favorite</mat-icon>
-              </span>
-            </div>
-          </mat-card-content>
-
-          <!-- Buttons  in the bottom of the card  -->
-
-          <mat-card-actions style="padding-top: 0;">
-            <button
-              class="margin_right_button blue_border"
-              (click)="editListing(listing)"
-              mat-stroked-button
-              color="primary"
-            >
-              Edit
-            </button>
-            <button
-              class="blue_border"
-              [routerLink]="['/listings', listing.id]"
-              mat-stroked-button
-              color="primary"
-            >
-              Read More
-            </button>
-          </mat-card-actions>
-        </mat-card>
-        <!-- ====================== End of card -->
-        </div>
+  </mat-card>
+  <!-- ====================== End of card -->
+</div>

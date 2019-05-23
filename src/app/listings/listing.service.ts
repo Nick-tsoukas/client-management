@@ -35,7 +35,8 @@ export class ListingService implements OnInit {
 
      this.db.collection('availableListings').add({
       cityZip: formData.value['cityZip'],
-      description: formData.value['description'],
+      longDescription: formData.value['description'],
+      description: `${formData.value['description'].split('').slice(0,10).join('')}...`,
       type: formData.value['type'],
       price: formData.value['price'],
       squareFt: formData.value['squareFt'],

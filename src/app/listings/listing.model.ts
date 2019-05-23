@@ -8,6 +8,7 @@ export interface Listing {
    image: string;
    price: number;
    description: string;
+   longDescription?: string;
   }
 
 

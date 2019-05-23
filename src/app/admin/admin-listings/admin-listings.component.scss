@@ -1,6 +1,13 @@
 @import '../../../mixins.scss';
 
-
+.image_container {
+  position: relative;
+  button {
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+  }
+}
 
 .card_container {
   display:grid;
