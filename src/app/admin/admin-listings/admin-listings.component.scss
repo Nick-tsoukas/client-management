@@ -15,13 +15,17 @@
 }
 
 .bottom_grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  // grid-template-columns: 1fr 1fr;
   padding-top: .5em;
   span {
     padding-left: 1em;
   }
 
+}
+
+.bottom_grid > div {
+  padding-right: 1em;
 }
 .card_container {
   display:grid;
@@ -56,9 +60,9 @@ mat-card {
     transition-property: all;
     transition-duration: .5s;
     img {
-      max-height: 400px;
+      max-height: 225px;
     }
-    min-width: 300px;
+    // min-width: 300px;
     // margin-bottom: 2em;
 }
 
