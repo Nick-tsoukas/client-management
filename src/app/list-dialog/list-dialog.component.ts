@@ -18,12 +18,9 @@ export class ListDialogComponent implements OnInit {
 
   listing: Listing;
 
-  constructor(
-      private fb: FormBuilder,
-      private dialogRef: MatDialogRef<ListDialogComponent>,
-      @Inject(MAT_DIALOG_DATA) listing:Listing,
-      private listingService: ListingService) {
-        this.listing = listing;
+  constructor( private fb: FormBuilder, private dialogRef: MatDialogRef<ListDialogComponent>,@Inject(MAT_DIALOG_DATA) listing:Listing, private listingService: ListingService) {
+      this.listing = listing;
+     
 
       this.dialogRef.afterClosed()
         .subscribe(result => {
@@ -45,6 +42,12 @@ export class ListDialogComponent implements OnInit {
 
   ngOnInit() {
 
+  }
+
+  remove(){
+    this.listingService.removeListing(this.listing.id).toPromise().then(res =>{
+      this.close();
+    })
   }
 
 //  add to database here 

@@ -1,8 +1,7 @@
-import { AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 
 import { Listing } from '../listings/listing.model';
 import { ActivatedRoute} from '@angular/router';
-import { Subscription } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
 
 @Component({
@@ -22,7 +21,6 @@ export class ListComponent implements OnInit {
   ngOnInit() {
 
     this.list = this.route.snapshot.data['list'];
-
 
 
   }

@@ -1,8 +1,9 @@
 import { Listing } from './listing.model';
 import { Injectable, OnInit } from '@angular/core';
-import { map, first,last,concatMap } from 'rxjs/operators';
+import { map, first, last, concatMap } from 'rxjs/operators';
 import { Observable, from } from 'rxjs';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { Router } from '@angular/router';
 
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 
@@ -10,41 +11,56 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
 export class ListingService implements OnInit {
   imageUrl: string;
 
-  constructor(private db: AngularFirestore, private storage: AngularFireStorage) { }
+  constructor(public router : Router, private db: AngularFirestore, private storage: AngularFireStorage) { }
   ngOnInit() { }
 
-  uploadImage(event){
+  uploadImage(event) {
     const file = event.target.files[0];
     const filePath = `listingImage`;
     const task = this.storage.upload(filePath, file);
     task.snapshotChanges()
-    .pipe(
-      last(),
-      concatMap(() => this.storage.ref(filePath).getDownloadURL())
+      .pipe(
+        last(),
+        concatMap(() => this.storage.ref(filePath).getDownloadURL())
       )
       .subscribe(val => {
         this.imageUrl = val;
       })
   }
 
-  saveListing(listingId:string, changes: Partial<Listing>):Observable<any>{
-   return  from(this.db.doc(`availableListings/${listingId}`).update(changes))
+  saveListing(listingId: string, changes: Partial<Listing>): Observable<any> {
+    return from(this.db.doc(`availableListings/${listingId}`).update(changes))
   }
 
-  addListing(formData){
+  removeListing(listingId: string){
+    return from(this.db.doc(`availableListings/${listingId}`).delete())
+  }
 
-     this.db.collection('availableListings').add({
+  speak(){
+    console.log('hello')
+  }
+
+  addListing(formData) {
+    //setting the id to route to listing after creation 
+    const id = this.db.createId();
+
+    this.db.collection('availableListings').doc(id).set({
       cityZip: formData.value['cityZip'],
       longDescription: formData.value['description'],
-      description: `${formData.value['description'].split('').slice(0,10).join('')}...`,
+      description: `${formData.value['description'].split('').slice(0, 10).join('')}...`,
       type: formData.value['type'],
       price: formData.value['price'],
       squareFt: formData.value['squareFt'],
       image: this.imageUrl,
     })
+    .then(res => {
+      this.router.navigate(['/listings', `${id}`]);
+    })
+
+
   }
 
-  getChats(id:string){
+  getChats(id: string) {
     return this.db.doc(`users/${id}`).snapshotChanges()
       .pipe(
         map(snap => {
