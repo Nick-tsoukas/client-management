@@ -1,6 +1,7 @@
 <div class="card_container">
 
   <mat-card class="position_rel" mat-elevation-z24 class="hoverEffect" *ngFor="let listing of listings | async">
+
     <!-- Card Image  -->
     <div class="image_container">
       <img mat-card-image src="{{ listing.image }}" />
@@ -12,30 +13,32 @@
     <!-- Main card Content  -->
     <mat-card-content>
       <h3 class="price">{{ listing.price | currency }}</h3>
-      <!-- <span class="type">{{ listing.type }} </span> -->
-      <!-- <p> {{listing.type }}</p> -->
       <section class="bottom_grid">
-          <div>
-            <fa-icon [icon]='faRulerCombined'></fa-icon>
-            <span>1111 SF</span>
-          </div>
-          <div>
-            <fa-icon [icon]='faMoneyBillWave'></fa-icon>
-            <span>$1111/Mo</span>
-          </div>
-        </section>
-  
-      <p class="address">
-          <fa-icon style="padding-right:.1em;" [icon]='faMapMarker'></fa-icon> {{ listing.streetAddress }} <br>
-         {{ listing.cityZip }}
-        </p>
+        <div>
+          <fa-icon [icon]='faRulerCombined'></fa-icon>
+          <span>1111 SF</span>
+        </div>
+        <div>
+          <fa-icon [icon]='faMoneyBillWave'></fa-icon>
+          <span>$1111/Mo</span>
+        </div>
+      </section>
 
-    </mat-card-content>
-    <!-- Buttons  in the bottom of the card  -->
+      <p class="address">
+        <fa-icon style="padding-right:.1em;" [icon]='faMapMarker'></fa-icon> {{ listing.streetAddress }} <br>
+        {{ listing.cityZip }}
+      </p>
+
+    <!-- Read More Button  -->
     <mat-card-actions class="right_align" style="padding-top: 0;">
-      <button class="blue_border" [routerLink]="['/listings', listing.id]" mat-stroked-button color="primary">
-        Read More
-      </button>
+      <button class="blue_border" [routerLink]="['/listings', listing.id]" mat-stroked-button color="primary">Read
+        More</button>
     </mat-card-actions>
+
+    <!-- type of listing ... top of card -->
+    <section class="type_box">
+      <p>{{listing.type}}</p>
+    </section>
+  </mat-card-content>
   </mat-card>
 </div>
