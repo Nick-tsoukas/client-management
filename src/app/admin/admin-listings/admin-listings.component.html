@@ -13,7 +13,8 @@
     <!-- Main card Content  -->
     <mat-card-content>
       <h3 class="price">{{ listing.price | currency }}</h3>
-      <section class="bottom_grid">
+      <p> {{listing.description.split('').slice(0,150).join('') }}... </p>
+      <!-- <section class="bottom_grid">
         <div>
           <fa-icon [icon]='faRulerCombined'></fa-icon>
           <span>1111 SF</span>
@@ -22,7 +23,7 @@
           <fa-icon [icon]='faMoneyBillWave'></fa-icon>
           <span>$1111/Mo</span>
         </div>
-      </section>
+      </section> -->
 
       <p class="address">
         <fa-icon style="padding-right:.1em;" [icon]='faMapMarker'></fa-icon> {{ listing.streetAddress }} <br>
