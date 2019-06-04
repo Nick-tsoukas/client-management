@@ -32,7 +32,9 @@ export class AuthService {
                 // this.userChange.next(this.user);
                 this.userId = user.uid;
                 this.authChange.next(true);
-                if (user.uid === 'jsfbs6IY3NTeKA1VmcGamSYtJSI3') {
+                // im giving everyone admin privilege why not!
+                // if (user.uid === 'jsfbs6IY3NTeKA1VmcGamSYtJSI3') {
+                    if(user.uid){
                     this.isAdmin.next(true);
                     this.router.navigate(['./admin/listing']);
 

@@ -1,7 +1,14 @@
  # Client Management 
  
- This app was built in effort to learn angular development. It is still in development, but wanted to explore how to host the app in production. 
+ This app was built in effort to learn angular development. It is still in development, but wanted to explore how to host the app in production.
 
+ I'm currently not working on it but i noticed people were logging in, so I'm giving everyone admin privileges,
+
+ I'll come back to this project at a later date and will say I had a great time learning how to work with angular!
+
+ One thing that I struggled with was wrapping my head around the rxjs lib. It was frustrating at first, but I came to see the power of it.subscribe()!
+
+ Don't do anything I wouldn't do; 
 
  link to app  
  https://client-management-111c5.firebaseapp.com/
