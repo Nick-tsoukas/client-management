@@ -20,6 +20,7 @@
       </mat-form-field>
       <button class="mat-elevation-z12" style="margin-top:2em; width:250px;"  (click)="login(f)" mat-raised-button color="primary">Sign In</button>
       <button class="mat-elevation-z12" style="margin-top:2em; width:250px;" (click)="register(f)" mat-raised-button color="primary">Create Account</button>
+      <p class="error" *ngIf="showError">Incorrect Login Details ... Please try again</p>
     </form>
   </mat-card>
 </section>

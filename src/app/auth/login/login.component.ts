@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -8,10 +9,20 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  showError: boolean;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) {
+
+   }
 
   ngOnInit() {
+    this.showError = false;
+    this.authService.loginError.subscribe( val => {
+      if (val === true) {
+        this.showError = true;
+      }
+    });
+
   }
 
   register(form: NgForm){

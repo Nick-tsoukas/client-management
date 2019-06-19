@@ -17,16 +17,20 @@ mat-card {
 
 }
 
-.container {
-    height: 100vh;
-    background-image: url('../../images/ObjBonus01-C.png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-
 body > app-root > mat-sidenav-container > mat-sidenav-content > main > app-welcome {
     height: 100%;
+}
+
+.container {
+  height: 100vh;
+  background-image: url('../../images/ObjBonus01-C.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.error {
+  color: red;
 }
 
 
